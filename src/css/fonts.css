@@ -114,27 +114,3 @@
     font-style: normal;
     font-display: swap;
 }
-
-
-:root {
-    --font-cap-black: 'InterTightBlack', sans-serif;
-    --font-cap-light: 'InterTightLight', sans-serif;
-    --font-cap-extralight: 'InterTightExtraLight', sans-serif;
-    --font-cap-bold: 'InterTightBold', sans-serif;
-    --font-cap-extrabold: 'InterTightExtraBold', sans-serif;
-    --font-cap-regular: 'InterTightRegular', sans-serif;
-    --font-cap-semibold: 'InterTightSemiBold', sans-serif;
-    --font-cap-thin: 'InterTightThin', sans-serif;
-    --font-cap-medium: 'InterTightMedium', sans-serif;
-}
-
-body{
-    font-size:16px;
-    min-width:320px;
-    position:relative;
-    line-height:1;
-    overflow-x:hidden;
-    font-family: var(--font-cap-extrabold);
-    font-weight: normal;
-    opacity:1;
-}

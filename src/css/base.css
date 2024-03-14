@@ -1,3 +1,31 @@
+:root {
+    --font-cap-black: 'InterTightBlack', sans-serif;
+    --font-cap-light: 'InterTightLight', sans-serif;
+    --font-cap-extralight: 'InterTightExtraLight', sans-serif;
+    --font-cap-bold: 'InterTightBold', sans-serif;
+    --font-cap-extrabold: 'InterTightExtraBold', sans-serif;
+    --font-cap-regular: 'InterTightRegular', sans-serif;
+    --font-cap-semibold: 'InterTightSemiBold', sans-serif;
+    --font-cap-thin: 'InterTightThin', sans-serif;
+    --font-cap-medium: 'InterTightMedium', sans-serif;
+    --main-black-color: #1C1D20;
+    --secondary-color: #242527;
+    --dark-grey-color: #3B3B3B;
+    --accent-color: #ED3B44;
+    --accent-white-color: #FAFAFA
+}
+
+body {
+    font-size: 16px;
+    min-width: 320px;
+    position: relative;
+    line-height: 1;
+    overflow-x: hidden;
+    font-family: var(--font-cap-extrabold);
+    font-weight: normal;
+    opacity: 1;
+}
+
 .container{
     padding-left: 16px;
     padding-right: 16px;
@@ -35,18 +63,12 @@
     }
 }
 
-@media screen and (min-width: 1280px) {
-    .container {
-        max-width: 1280px;
-    }
-
-    .section {
-        padding-bottom: 164px;
-    }
-}
 
 @media screen and (min-width: 1440px) {
     .container {
         max-width: 1440px;
+    }
+    .section {
+        padding-bottom: 164px;
     }
 }
