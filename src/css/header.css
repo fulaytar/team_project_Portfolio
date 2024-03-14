@@ -1,3 +1,37 @@
+/* Стилі шрифтів та кольори
+
+=========Дефолтні===========
+font-family: var(--font-cap-regular)
+===========================
+
+========Приклад як прописувати=====
+font-family: var(--font-cap-extrabold);
+==========================
+
+-------Список жирності----
+100   var(--font-cap-thin)
+200   var(--font-cap-extralight)
+300   var(--font-cap-light)
+400   var(--font-cap-regular)
+500   var(--font-cap-medium)
+600   var(--font-cap-semibold)
+700   var(--font-cap-bold) 
+800   var(--font-cap-extrabold)
+900   var(--font-cap-black)
+-------Список жирності ----
+
+=======Кольори======
+--main-black-color: #1C1D20;
+--secondary-color: #242527;
+--dark-grey-color: #3B3B3B;
+--accent-color: #ED3B44;
+--accent-white-color: #FAFAFA;
+=======Кольори======
+
+====Як прописувати колір====
+color: var(--main-black-color);
+====Як прописувати колір====
+*/
 .header {
   padding: 20px 0;
 }
