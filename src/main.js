@@ -1,3 +1,4 @@
+import './js/mouse_hover'
 import './js/header'
 import './js/hero'
 import './js/about_me'
