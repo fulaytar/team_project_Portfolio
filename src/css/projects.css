@@ -177,6 +177,7 @@ div .swiper-button-next.swiper-button-disabled {
     }
     .slide-description {
         border-radius: 24px 0 0 24px;
+        width: 688px;
     }
     .slide-description-programs {
         margin-bottom: 223px;
