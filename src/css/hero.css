@@ -32,3 +32,107 @@ font-family: var(--font-cap-extrabold);
 color: var(--main-black-color);
 ====Як прописувати колір====
 */
+
+@media screen and (min-width: 375px) {
+}
+/* ==========END 375PX ========================= */
+/* ======================768PX ================= */
+@media screen and (min-width: 768px) {
+}
+/* ==================END 768PX ================= */
+/* ================== 1440PX=================== */
+@media screen and (min-width: 1440px) {
+  .section-decor {
+    background-image: image-set(
+      url('../img/hero/hero_bg.jpeg') 1x,
+      url('../img/hero/hero_bg@2x.jpeg') 2x
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 300px;
+  }
+
+  .hero-title {
+    margin-bottom: 243px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1084px;
+    color: var(--accent-white-color);
+    font-family: var(--font-cap-medium);
+    font-size: 90px;
+    font-weight: 500;
+    line-height: 1; /* 100% */
+    letter-spacing: -2.7px;
+    text-transform: uppercase;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    justify-content: end;
+  }
+  .social-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mail-btn {
+    background-color: transparent;
+    padding: 18px 24px;
+    border-radius: 60px;
+    border: 1px solid var(--dark-grey-color);
+    color: var(--accent-white-color);
+    font-family: var(--font-cap-medium);
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.32px;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mail-btn:hover {
+    border: 1px solid var(--accent-white-color);
+  }
+
+  .item {
+    background-color: transparent;
+    padding: 18px 16px;
+    border-radius: 60px;
+    border: 1px solid var(--dark-grey-color);
+    color: var(--accent-white-color);
+    font-family: var(--font-cap-medium);
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.32px;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .item-1 {
+    padding: 18px 20px;
+  }
+  .item-2 {
+    padding: 18px 17px;
+  }
+  .item-3 {
+    padding: 18px 18px;
+  }
+
+  .item:hover {
+    border: 1px solid var(--accent-white-color);
+  }
+}
+
+@media screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx),
+  screen and (min-device-pixel-ratio: 2) {
+  .hero-section {
+    background-image: url(../img/hero/hero_bg@2x.jpeg);
+  }
+}

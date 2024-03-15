@@ -32,9 +32,9 @@ font-family: var(--font-cap-extrabold);
 color: var(--main-black-color);
 ====Як прописувати колір====
 */
-.header {
+/* .header {
   padding: 20px 0;
-}
+} */
 
 .nav-list {
   display: flex;
