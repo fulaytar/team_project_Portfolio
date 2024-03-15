@@ -14,7 +14,148 @@ const INSTANCE =  axios.create({
   }
 });
 
-form.addEventListener('submit', function (e) {
+const toggleModal = (action) => {
+  if (modal === null) return;
+
+  if (action === 'open') {
+    modal.classList.add('active');
+    overlay.classList.add('active');
+  } else if (action === 'close') {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+};
+
+const openModal = () => {
+  toggleModal('open');
+};
+
+const closeModal = () => {
+  toggleModal('close');
+};
+
+const setRequests = async (data) => {
+  try {
+    const response = await INSTANCE.post(`/requests`, data);
+    handleSuccess(response.data);
+  } catch (error) {
+    handleError(error.message);
+  }
+};
+
+const handleSuccess = (responseData) => {
+  createHTML(responseData);
+  form.reset();
+};
+
+const handleError = (errorMessage) => {
+  iziToast.error({
+    title: 'Error',
+    message: errorMessage,
+    position: 'topRight'
+  });
+};
+
+const notification = (input, text, format) => {
+  const parent = input.parentNode;
+  parent.classList.add(format);
+
+  const notificationLabel = document.createElement('label');
+  notificationLabel.classList.add(`${format}-label`);
+  notificationLabel.textContent = text;
+
+  parent.append(notificationLabel);
+};
+
+const removeError = (input) => {
+  const parent = input.parentNode;
+
+  parent.classList.remove('error', 'success');
+
+  const errorLabel = parent.querySelector('.error-label');
+  if (errorLabel) {
+    errorLabel.remove();
+  }
+
+  const successLabel = parent.querySelector('.success-label');
+  if (successLabel) {
+    successLabel.remove();
+  }
+};
+
+const createHTML = (data) => {
+  const { title, message } = data;
+
+  const content = document.querySelector('.content');
+  content.innerHTML = '';
+
+  const titleElement = document.createElement("h2");
+  titleElement.textContent = title;
+
+  const paragraphElement = document.createElement("p");
+  paragraphElement.textContent = message;
+
+  content.append(titleElement, paragraphElement);
+
+  openModal();
+};
+
+const validateInputs = () => {
+  const inputs = form.querySelectorAll('.form-control');
+  const valid = [];
+
+  inputs.forEach((item) => {
+    const parent = item.parentNode;
+    const checkAttr = item.getAttribute('type') || item.tagName.toLowerCase();
+    removeError(item);
+
+    switch (checkAttr) {
+      case 'text':
+        if (item.value.trim() === '') {
+          parent.classList.add("error");
+          notification(item, "The field is required.", "error");
+          valid.push(item.getAttribute('name'));
+        } else {
+          parent.classList.remove("error");
+          notification(item, "Success!", "success");
+        }
+        break;
+      case 'email':
+        const regEmail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (item.value.trim() === '' || !regEmail.test(item.value)) {
+          parent.classList.add("error");
+          notification(item, "Invalid email, please try again", "error");
+          valid.push(item.getAttribute('name'));
+        } else {
+          parent.classList.remove("error");
+          notification(item, "Success!", "success");
+        }
+        break;
+      default:
+        if (item.value.trim() === '') {
+          parent.classList.add("error");
+          notification(item, "The field is required.", "error");
+          valid.push(item.getAttribute('name'));
+        } else {
+          parent.classList.remove("error");
+          notification(item, "Success!", "success");
+        }
+        break;
+    }
+  });
+
+  return valid.length > 0;
+};
+
+document.addEventListener('keyup', (e) => {
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});
+closeModalButton.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   let checkValid = validateInputs();
@@ -25,155 +166,16 @@ form.addEventListener('submit', function (e) {
 
     const response = setRequests(formData);
 
-    Array.prototype.forEach.call(form.querySelectorAll('label'), function(node) {
+    Array.prototype.forEach.call(form.querySelectorAll('label'), (node) => {
       node.parentNode.removeChild(node);
     });
 
-    Array.prototype.forEach.call(document.querySelectorAll('.input-holder'), function(node) {
+    Array.prototype.forEach.call(document.querySelectorAll('.input-holder'), (node) => {
       node.classList.remove('success');
-    })
-  }
-})
-
-form.addEventListener('input', function(e){
-  validateInputs();
-});
-function validateInputs(){
-  const inputs = form.querySelectorAll('.form-control');
-  const valid = [];
-  let checkAttr = null;
-
-  inputs.forEach(function(item,j){
-
-    const parent = item.parentNode;
-
-    if(item.getAttribute('type')){
-      checkAttr = item.getAttribute('type');
-    }else{
-      checkAttr = item.tagName;
-    }
-    removeError(item);
-
-    switch(checkAttr){
-      case 'text':
-        let _thisVal = item.value;
-
-        if(_thisVal === ''){
-          parent.classList.add("error");
-
-          notification(item, "The field is required.", "error", "success")
-
-          valid.push(item.getAttribute('name'));
-        }else{
-          parent.classList.remove("error");
-          notification(item, "Success!", "success")
-        }
-        break;
-      case 'email':
-        const regEmail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-        if(item.value === '' || !regEmail.test(item.value)){
-          parent.classList.add("error");
-
-          notification(item, "Invalid email, try again", "error")
-
-          valid.push(item.getAttribute('name'));
-        }else{
-          parent.classList.remove("error");
-          notification(item, "Success!", "success")
-        }
-        break;
-      default:
-        if(item.value === ''){
-          parent.classList.add("error");
-          valid.push(item.getAttribute('name'));
-        }else{
-          parent.classList.remove("error");
-        }
-        break;
-    }
-  });
-  return valid.length > 0;
-}
-
-function notification (input, text, format) {
-  const parent = input.parentNode;
-  const errorLabel = document.createElement('label');
-  errorLabel.classList.add(format+'-label');
-  errorLabel.textContent = text;
-
-  parent.classList.add(format);
-  parent.append(errorLabel);
-
-}
-
-function removeError(input) {
-  const parent = input.parentNode;
-  if(parent.classList.contains('error')) {
-    parent.querySelector('.error-label').remove();
-    parent.classList.remove('error');
-  }
-  if(parent.classList.contains('success')) {
-    if( parent.querySelector('.success-label')) {
-      parent.querySelector('.success-label').remove();
-    }
-    parent.classList.remove('success');
-  }
-}
-
-function createHTML(data) {
-
-  const content = document.querySelector('.content');
-  content.replaceChildren();
-
-  const title = document.createElement("h2");
-  const paragraph = document.createElement("p");
-  title.textContent = data.title;
-  paragraph.textContent = data.message;
-
-  content.append(title);
-  content.append(paragraph);
-
-  openModal();
-}
-
-document.addEventListener('keyup', function(e) {
-  if (e.key === "Escape") {
-    closeModal();
-  }
-});
-closeModalButton.addEventListener('click', function () {
-  closeModal();
-});
-overlay.addEventListener('click', function () {
-  closeModal();
-})
-
-function openModal() {
-  if(modal === null) return;
-  modal.classList.add('active');
-  overlay.classList.add('active');
-}
-
-function closeModal() {
-  if(modal === null) return;
-  modal.classList.remove('active');
-  overlay.classList.remove('active');
-}
-
-
-async function setRequests(data) {
-  try {
-    const response = await INSTANCE.post(`/requests`, data);
-    createHTML(response.data);
-    form.reset();
-
-  }catch (e){
-    iziToast.error({
-      title: 'Error',
-      message: e.message,
-      position: 'topRight'
     });
   }
-}
+});
 
+form.addEventListener('input', (e) => {
+  validateInputs();
+});
