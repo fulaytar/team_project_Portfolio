@@ -74,6 +74,14 @@
 .slide-description-button p {
     letter-spacing: -0.02em;
     color: var(--accent-white-color);
+    transform: scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-description-button:hover p,
+.slide-description-button:focus p,
+.slide-description-button:active p {
+    transform: scale(1.2);
 }
 
 .slide-wrapper-img {
@@ -115,6 +123,16 @@ div .swiper-btn-next {
     width: 25px;
     height: 24px;
     stroke: var(--accent-white-color);
+    transform: scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+}
+.swiper-btn-prev:hover .btn-arrow-prev,
+.swiper-btn-next:hover .btn-arrow-next,
+.swiper-btn-prev:focus .btn-arrow-prev,
+.swiper-btn-next:focus .btn-arrow-next,
+.swiper-btn-prev:active .btn-arrow-prev,
+.swiper-btn-next:active .btn-arrow-next {
+    transform: scale(1.2);
 }
 
 div .swiper-button-prev.swiper-button-disabled,

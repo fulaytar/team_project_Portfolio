@@ -12,7 +12,7 @@ const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: false,
     speed: 500,
-    spaceBetween: 10,
+    spaceBetween: 20,
 
     // Configure Swiper to use modules
     modules: [Navigation, Keyboard, Mousewheel, Parallax],
