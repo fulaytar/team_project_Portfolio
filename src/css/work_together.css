@@ -1,5 +1,5 @@
 .footer {
-  background-color: #000;
+  background-color: var(--main-black-color);
   padding: 32px 0;
   color: #fff;
 }
@@ -138,7 +138,7 @@ input:-webkit-autofill:focus {
   box-sizing: border-box;
   border: 1px solid rgba(250, 250, 250, 0.1);
   border-radius: 20px;
-  background: var(--main-black-color);
+  background: rgb(28, 29, 32);
   text-align: center;
 }
 .modal h2 {
