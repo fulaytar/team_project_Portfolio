@@ -1,35 +1,264 @@
-/* Стилі шрифтів та кольори
+.footer {
+  background-color: #000;
+  padding: 32px 0;
+  color: #fff;
+}
+.work-together {
+  color: #fff;
+  font-family: var(--font-cap-medium);
+}
+.work-together__title picture {
+  display: inline-block;
+  max-width: 44px;
+}
+.work-together__title .work-together__title__text h3 {
+  font-size: 40px;
+  line-height: 1;
+  font-family: var(--font-cap-medium);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.work-together__title .work-together__title__text_mark {
+  color: #ED3B44;
+}
+.work-together__title .work-together__title__text p {
+  padding-top: 10px;
+}
 
-=========Дефолтні===========
-font-family: var(--font-cap-regular)
-===========================
+.work-together__form {
+  padding: 64px 0 78px 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.grid-column:first-child {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.form button.btn-submit{
+  width: 150px;
+  height: 150px;
+  background: rgb(237, 59, 68);
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  padding: 0;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 32px;
+}
+.form button.btn-submit:hover {
+  background: rgb(224, 55, 63);
+}
+.form input[type="text"],
+.form input[type="email"]{
+  display: block;
+  width: 100%;
+  max-width: 390px;
+  height: 44px;
+  font-family: var(--font-cap-medium);
+  box-sizing: border-box;
+  padding: 0 0 20px 0;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #FAFAFA33;
+  color: #FAFAFA;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.form input:focus,
+.form input:hover {
+  outline: none;
+  color: #FAFAFA;
+  border-bottom: 1px solid #FAFAFA;
+}
+.form input:hover::placeholder {
+  color: #FAFAFA;
+}
+.input-holder:first-child {
+  padding-bottom: 16px;
+}
+.input-holder label {
+  display: inline-block;
+  font-family: var(--font-cap-medium);
+  padding-top: 4px;
+  font-size: 14px;
+  line-height: 18px;
+}
+.input-holder.error input {
+  border-bottom: 1px solid #E74A3B;
+}
+.error-label {
+  color: #E74A3B;
+}
+.input-holder.success input {
+  border-bottom: 1px solid #3CBC81;
+}
+.success-label {
+  color: #3CBC81;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
 
-========Приклад як прописувати=====
-font-family: var(--font-cap-extrabold);
-==========================
+.work-together__link {
+}
+.work-together__link a {
+  display: inline-grid;
+  justify-content: center;
+  align-items: center;
+  width: 169px;
+  height: 40px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 60px;
+  font-size: 12px;
+}
+.work-together__link a:hover {
+  border: 1px solid rgb(250, 250, 250);
+}
 
--------Список жирності----
-100   var(--font-cap-thin)
-200   var(--font-cap-extralight)
-300   var(--font-cap-light)
-400   var(--font-cap-regular)
-500   var(--font-cap-medium)
-600   var(--font-cap-semibold)
-700   var(--font-cap-bold) 
-800   var(--font-cap-extrabold)
-900   var(--font-cap-black)
--------Список жирності ----
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 64px;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  z-index: 10;
+  width: 343px;
+  max-width: 100%;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: 1px solid rgba(250, 250, 250, 0.1);
+  border-radius: 20px;
+  background: rgb(28, 29, 32);
+  text-align: center;
+}
+.modal h2 {
+  color: #fff;
+  font-size: 20px;
+  padding-bottom: 25px;
+  line-height: 24px;
+  font-family: var(--font-cap-semibold);
+}
+.modal p {
+  color: rgba(250, 250, 250, 0.6);
+  line-height: 24px;
+}
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-close__button {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  cursor: pointer;
+  font-size: 26px;
+  border: none;
+  outline: none;
+  background: none;
+  color: #fff;
+  font-family: var(--font-cap-thin);
+  line-height: 1;
+  padding: 0;
+}
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 200ms ease-in-out;
+  background-color: RGBA(0,0,0,.5);
+  pointer-events: none;
+}
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
 
-=======Кольори======
---main-black-color: #1C1D20;
---secondary-color: #242527;
---dark-grey-color: #3B3B3B;
---accent-color: #ED3B44;
---accent-white-color: #FAFAFA;
-=======Кольори======
 
-====Як прописувати колір====
-color: var(--main-black-color);
-====Як прописувати колір====
-*/
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .section {
+    padding-bottom: 96px;
+  }
+  .footer {
+    padding-bottom: 169px;
+  }
+
+  .footer {
+    padding: 88px 0 168px 0;
+  }
+
+  .work-together__title picture {
+    max-width: 70px;
+  }
+  .work-together__title .work-together__title__text h3 {
+    font-size: 64px;
+  }
+
+  .grid {
+    grid-template-columns: 522px 1fr;
+  }
+  .grid-column:first-child {
+    grid-template-columns: 1fr 1fr;
+  }
+  .form input[type="text"],
+  .form input[type="email"] {
+    max-width: 245px;
+  }
+  .form button.btn-submit{
+    margin-top: -50px;
+  }
+
+  .work-together__link a {
+    width: 255px;
+    height: 56px;
+    padding: 18px 32px 18px 32px;
+  }
+  .work-together__link a:first-child {
+    margin-right: 8px;
+  }
+  .modal {
+    width: 492px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
+  .section {
+    padding-bottom: 164px;
+  }
+  .grid {
+    grid-template-columns: 844px 1fr;
+  }
+
+  .form input[type="text"],
+  .form input[type="email"] {
+    max-width: 390px;
+  }
+}
