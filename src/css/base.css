@@ -38,7 +38,7 @@ body {
     position: relative;
     line-height: 1;
     overflow-x: hidden;
-    font-family: var(--font-cap-extrabold);
+    font-family: var(--font-cap-regular);
     font-weight: normal;
     opacity: 1;
 }
