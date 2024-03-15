@@ -185,6 +185,11 @@ input:-webkit-autofill:focus {
   pointer-events: all;
 }
 
+@media  screen and (max-width:374px) {
+  .work-together__link a:first-child{
+    margin-bottom:12px;
+  }
+}
 
 @media screen and (min-width: 375px) {
   .container {
