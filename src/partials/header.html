@@ -2,12 +2,29 @@
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-item">
-        <img src="../img/header/header_avatar.png" alt="header_avatar" />
-        <svg>
-          <use></use>
-        </svg>
+        <a class="header-link-logo" href="./index.html">
+          <img
+            class="header-img"
+            srcset="
+              ./img/header/header_avatar.png     80w,
+              ./img/header/header_avatar@2x.png 160w
+            "
+            sizes="(min-width: 768px) 80px, (max-width: 767px) 80px"
+            src="./img/header/header_avatar.png"
+            alt="avatar_person"
+          />
+          <svg width="84" height="19">
+            <use href="../img/icons.svg#logo"></use>
+          </svg>
+        </a>
       </li>
-      <li class="nav-item"></li>
+      <li class="nav-item">
+        <button class="header_menu" type="button">Menu</button>
+      </li>
+      <li class="nav-item">
+        <button class="header_order" type="button">Order the project</button>
+      </li>
     </ul>
+    <div class="close"></div>
   </nav>
 </header>

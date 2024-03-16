@@ -32,3 +32,56 @@ font-family: var(--font-cap-extrabold);
 color: var(--main-black-color);
 ====Як прописувати колір====
 */
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-link-logo{
+    display: flex;
+    align-items: flex-start;
+    column-gap: 8px;
+}
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.close {
+    position: absolute;
+    right: 23px;
+    top: 39px;
+    width: 28px;
+    height: 28px;
+    opacity: 0.3;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+.close:before{
+    position: absolute;
+    bottom: 5px;
+    content: ' ';
+    height: 22px;
+    width: 2px;
+    background-color: #333;
+}
+.close:after {
+    position: absolute;
+    top: 10px;
+    content: ' ';
+    height: 22px;
+    width: 2px;
+    background-color: #333;
+}
+
+.close:before {
+    transform: rotate(90deg);
+}
+
+.close:after {
+    transform: rotate(90deg);
+}
