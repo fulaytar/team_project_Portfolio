@@ -4,10 +4,8 @@ import "izitoast/dist/css/iziToast.min.css";
 import axios from 'axios';
 import Swiper from 'swiper';
 
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Navigation, Keyboard, Mousewheel } from 'swiper/modules';
+import 'swiper/css/bundle';
 
 
 const reviewsList = document.querySelector('.reviews');
@@ -30,26 +28,32 @@ const markup = reviews.map(({avatar_url, author, review}) =>
   reviewsList.insertAdjacentHTML("beforeend", markup);
 
   const swiper = new Swiper('.swiper', {
-  modules: [Navigation, Pagination],
+  modules: [Navigation, Keyboard, Mousewheel],
   slidesPerView: 1,
   spaceBetween: 16,
-  // Responsive breakpoints
-  // breakpoints: {
-  //   375: {
-  //     slidesPerView: 2,
-  //     spaceBetween: 16
-  //   },
-  //   768: {
-  //     slidesPerView: 4,
-  //     spaceBetween: 16
-  //     }
-  //   },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 16
+    },
+    1440: {
+      slidesPerView: 4,
+      spaceBetween: 16
+      }
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+      keyboard: {
+        enabled: true,
+    },
+    mousewheel: {
+        enabled: true,
+        forceToAxis: true,
+    },
+  
 });
 }
 
@@ -64,18 +68,18 @@ try {
     const reviews = await getReviews(); 
     createReviewsMarkup(reviews);
   } catch (error) {
-    iziToast.error({
+    iziToast.show({
         fontSize: 'large',
         position:	'topRight',
         messageColor: 'white',
-        timeout:	5000,
+        timeout:	6000,
         backgroundColor: '#ED3B44',
         theme: 'dark',
         progressBar: false,
-        message: 'Reviews not found',
+        message: 'Something went wrong',
     });
-    reviewsList.insertAdjacentHTML("beforeend",`<li class="review-item">
-    <p class="review-text">Not found</p></li>` );
+    reviewsList.insertAdjacentHTML("beforeend",`<li class="not-found-item">
+    <p class="not-found-text">Not found</p></li>` );
 }
   
 
