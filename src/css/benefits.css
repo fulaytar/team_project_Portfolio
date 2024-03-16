@@ -113,10 +113,16 @@ color: var(--main-black-color);
   letter-spacing: -0.02em;
   color: var(--accent-white-color);
   text-align: center;
+  transition: border transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.benefits-anchor-btn:hover {
+.benefits-anchor-btn:hover,
+.benefits-anchor-btn:focus {
   border-color: var(--accent-white-color);
+}
+
+.benefits-anchor-btn:active {
+  transform: scale(0.98);
 }
 
 @media screen and (max-width: 359px) {
@@ -128,3 +134,42 @@ color: var(--main-black-color);
   }
 }
 /* ==================== /Benefits Mobile style ====================  */
+
+/* ==================== Benefits Tablet style ====================  */
+@media screen and (min-width: 768px) {
+  .benefits-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+  }
+
+  .benefits-item {
+    width: 344px;
+  }
+}
+/* ==================== /Benefits Tablet style ====================  */
+
+/* ==================== Benefits Desktop style ====================  */
+@media screen and (min-width: 1440px) {
+  .benefits-section .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .benefits-title {
+    width: 284px;
+    margin-right: 412px;
+  }
+
+  .benefits-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 680px;
+    margin-bottom: 64px;
+  }
+
+  .benefits-item {
+    width: 332px;
+  }
+}
+/* ==================== /Benefits Desktop style ====================  */

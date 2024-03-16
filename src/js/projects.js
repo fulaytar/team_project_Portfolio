@@ -1,21 +1,38 @@
-//Izitoast
+// Core version + navigation, keyboard, mousewheel modules:
+import Swiper from 'swiper';
+import { Navigation, Keyboard, Mousewheel, Parallax } from 'swiper/modules';
 
-//import iziToast from "izitoast";
-//import "izitoast/dist/css/iziToast.min.css";
+// Import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/bundle';
 
-//Бібліотека Axios
-//import axios from 'axios';
+// Init Swiper:
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+    direction: 'horizontal',
+    loop: false,
+    speed: 500,
+    spaceBetween: 20,
 
-//Swiper.js
+    // Configure Swiper to use modules
+    modules: [Navigation, Keyboard, Mousewheel, Parallax],
 
-//import Swiper from 'swiper';
-// import Swiper styles
-//import 'swiper/css';
-//const swiper = new Swiper(...);
+  // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 
-//Accordion
+    keyboard: {
+        enabled: true,
+    },
 
-//import Accordion from 'accordion-js';
-//import 'accordion-js/dist/accordion.min.css';
+    mousewheel: {
+        enabled: true,
+        forceToAxis: true,
+    },
 
-/* Видаляй зайве, якщо не використавуєш */
+    // Parallax
+    parallax: true,
+
+});
