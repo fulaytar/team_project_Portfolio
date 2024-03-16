@@ -9,11 +9,11 @@
               ./img/header/header_avatar.png     80w,
               ./img/header/header_avatar@2x.png 160w
             "
-            sizes="(min-width: 768px) 80px, (max-width: 767px) 80px"
+            sizes="(min-width: 768px) 80px, (max-width: 768px) 80px"
             src="./img/header/header_avatar.png"
             alt="avatar_person"
           />
-          <svg width="84" height="19">
+          <svg class="header-svg-icon" width="84" height="19">
             <use href="../img/icons.svg#logo"></use>
           </svg>
         </a>
@@ -22,9 +22,19 @@
         <button class="header_menu" type="button">Menu</button>
       </li>
       <li class="nav-item">
-        <button class="header_order" type="button">Order the project</button>
+        <a href="#order" class="header_order_btn">Order the project</a>
+      </li>
+      <li class="nav-item">
+        <div class="close">
+          <div class="burger"></div>
+        </div>
       </li>
     </ul>
-    <div class="close"></div>
+    <ul class="list-menu-header">
+      <li class="list-menu-header-item"><a href="">About me</a></li>
+      <li class="list-menu-header-item"><a href="">Benefits</a></li>
+      <li class="list-menu-header-item"><a href="">Projects</a></li>
+      <li class="list-menu-header-item"><a href="">FAQ</a></li>
+    </ul>
   </nav>
 </header>
