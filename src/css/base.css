@@ -54,7 +54,8 @@ body {
     padding-bottom: 32px;
 }
 .section{
-    padding-bottom: 64px;
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 @media screen and (min-width: 375px) {
@@ -73,7 +74,8 @@ body {
     }
     
     .section {
-        padding-bottom: 96px;
+        padding-bottom: 48px;
+        padding-top: 48px;
     }
     .footer {
         padding-bottom: 169px;
@@ -86,6 +88,7 @@ body {
         max-width: 1440px;
     }
     .section {
-        padding-bottom: 164px;
+        padding-bottom: 82px;
+        padding-top: 82px;
     }
 }
