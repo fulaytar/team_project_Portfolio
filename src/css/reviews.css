@@ -31,7 +31,6 @@ font-family: var(--font-cap-extrabold);
 
 .reviews-section {
   background-color: var(--main-black-color);
-  padding: 96px 0;
 }
 
 .reviews-header {
@@ -89,7 +88,7 @@ font-family: var(--font-cap-extrabold);
     height: 0;
   }
 
-div.swiper {
+div.swiper3 {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -175,13 +174,13 @@ li.not-found-item {
 }
 
 @media screen and (min-width: 768px) {
-  div.swiper, li.not-found-item {
+  div.swiper3, li.not-found-item {
   width: 704px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  div.swiper, li.not-found-item {
+  div.swiper3, li.not-found-item {
   width: 1376px;
   }
 }
