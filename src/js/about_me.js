@@ -1,3 +1,4 @@
+'use strict'
 import Swiper from 'swiper';
 import 'swiper/css';
 import Accordion from 'accordion-js';
@@ -26,7 +27,7 @@ ac.addEventListener('click', event => {
 
 const nextArrow = document.querySelector('.arrow-next');
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper2', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
