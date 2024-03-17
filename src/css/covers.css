@@ -17,8 +17,6 @@
         radial-gradient(circle at 10% 50%, rgba(237, 59, 68, 0.6) 0%, rgba(237, 59, 68, 0) 20%),
         radial-gradient(circle at 80% 80%, rgba(237, 59, 68, 0.6) 0%, rgba(237, 59, 68, 0) 20%);
 
-    /*reset for cover section*/
-    padding-bottom: 0px;
     overflow: hidden;
     height: 508px;
 }
@@ -33,9 +31,6 @@
 /* end */
 
 #covers-container {
-    /*reset for cover section*/
-    padding-left: 0px;
-    padding-right: 0px;
     transform: rotate(16deg);
 }
 
