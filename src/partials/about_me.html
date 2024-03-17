@@ -1,4 +1,4 @@
-<section class="section about-me-section">
+<section id="about-me" class="section about-me-section">
   <h2 class="visually-hidden">About me</h2>
   <div class="container flex">
     <section class="first">
@@ -42,17 +42,17 @@
       </ul>
     </section>
     <section class="second">
-      <div class="accordion-container">
-        <div class="ac">
-          <h2 class="ac-header">
+      <div class="accordion-wrapper">
+        <div class="accordion ac">
+          <h2 class="accordion-header ac-header">
             about me
-            <button type="button" class="ac-trigger">
+            <button type="button" class="accordion-button ac-trigger">
               <svg class="arrow">
                 <use href="./img/icons.svg#icon-down"></use>
               </svg>
             </button>
           </h2>
-          <div class="ac-panel">
+          <div class="accordion-panel ac-panel">
             <ul class="about-me-menu-text">
               <li class="about-me-menu-text-list">
                 <p>
@@ -84,16 +84,16 @@
           </div>
         </div>
 
-        <div class="ac">
-          <h2 class="ac-header">
+        <div class="accordion ac">
+          <h2 class="accordion-header ac-header">
             role
-            <button type="button" class="ac-trigger">
+            <button type="button" class="accordion-button ac-trigger">
               <svg class="arrow">
                 <use href="./img/icons.svg#icon-down"></use>
               </svg>
             </button>
           </h2>
-          <div class="ac-panel">
+          <div class="accordion-panel ac-panel">
             <ul class="about-me-menu-role">
               <li class="about-me-menu-role-list">
                 <p>Frontend development</p>
@@ -108,16 +108,16 @@
           </div>
         </div>
 
-        <div class="ac">
-          <h2 class="ac-header">
+        <div class="accordion ac">
+          <h2 class="accordion-header ac-header">
             education
-            <button type="button" class="ac-trigger">
+            <button type="button" class="accordion-button ac-trigger">
               <svg class="arrow">
                 <use href="./img/icons.svg#icon-down"></use>
               </svg>
             </button>
           </h2>
-          <div class="ac-panel">
+          <div class="accordion-panel ac-panel">
             <ul class="about-me-menu-education">
               <li class="about-me-menu-education-list">
                 <p>
@@ -142,7 +142,7 @@
       </div>
     </section>
     <section class="third">
-      <div class="swiper swiper2">
+      <div class="swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
@@ -173,7 +173,7 @@
         </div>
       </div>
       <button type="button" class="arrow-next">
-        <svg class="arrow-next-svg" width="28" height="28">
+        <svg class="arrow-next-svg">
           <use href="./img/icons.svg#arrow-right"></use>
         </svg>
       </button>

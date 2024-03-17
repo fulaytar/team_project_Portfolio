@@ -30,7 +30,6 @@ function createReviewsMarkup(reviews) {
     modules: [Navigation, Keyboard, Mousewheel],
     slidesPerView: 1,
     spaceBetween: 16,
-
     breakpoints: {
       768: {
         slidesPerView: 2,
