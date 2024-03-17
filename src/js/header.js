@@ -25,9 +25,8 @@ const header_burger_btn = document.querySelector(".burger");
 const mobileModal = document.querySelector('.mob-menu');
 
 header_close_btn.addEventListener("click", function() {
-    header_burger_btn.classList.toggle("activ-burger");
-    mobileModal.classList.toggle("is-open");
-    console.log(mobileModal);
+    header_burger_btn.classList.remove("activ-burger");
+    mobileModal.classList.add("is-open");
 
     // Додаємо відслідковувач події прокрутки після кліку на header_close_btn
     window.addEventListener("scroll", scrollHandler);
@@ -137,10 +136,12 @@ function clickModalX() {
 }
 
 function notScroll() {
-    const scrolledPixels = window.scrollY;
-    if (scrolledPixels > 10) {
+    let scrolledPixels = window.scrollY;
+    if (scrolledPixels > 1) {
+        header_burger_btn.classList.remove("activ-burger");
         clickModalX();
         window.removeEventListener("scroll", notScroll);
+
     }
 }
 
