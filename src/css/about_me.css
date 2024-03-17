@@ -47,11 +47,11 @@ color: var(--main-black-color);
 }
 
 .about-me-section {
-  padding-bottom: 64px;
   background-color: var(--main-black-color);
 }
 .about-me-box {
-  width: 343px;
+  max-width: 343px;
+  width: auto;
   height: 500px;
   margin-bottom: 16px;
   background-color: var(--secondary-color);
