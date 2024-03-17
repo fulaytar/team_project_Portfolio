@@ -31,9 +31,7 @@ font-family: var(--font-cap-extrabold);
 ====Як прописувати колір====
 color: var(--main-black-color);
 ====Як прописувати колір====
-<<<<<<< HEAD
 */
-=======
 */
 
 .visually-hidden {
@@ -310,4 +308,3 @@ color: var(--main-black-color);
     }
   }
 }
->>>>>>> parent of bd124e1 (refactoring)
