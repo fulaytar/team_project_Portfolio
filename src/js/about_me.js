@@ -1,9 +1,11 @@
-'use strict'
-import Swiper from 'swiper';
-import 'swiper/css';
-import Accordion from 'accordion-js';
-import 'accordion-js/dist/accordion.min.css';
+//Izitoast
 
+//import iziToast from "izitoast";
+//import "izitoast/dist/css/iziToast.min.css";
+
+//Бібліотека Axios
+
+//import axios from 'axios';
 const arrow = document.querySelectorAll('.arrow');
 const ac = document.querySelector('.accordion-container');
 const container = document.querySelector('.accordion-container');
@@ -27,7 +29,7 @@ ac.addEventListener('click', event => {
 
 const nextArrow = document.querySelector('.arrow-next');
 
-const swiper = new Swiper('.swiper2', {
+const swiper = new Swiper('.swiper', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
@@ -45,7 +47,7 @@ if (window.innerWidth > 767 && window.innerWidth < 1440) {
   swiper.update();
 }
 
-if (window.innerWidth >= 1440) {
+if (window.innerWidth > 1440) {
   swiper.params.slidesPerView = 6;
   swiper.update();
 }
