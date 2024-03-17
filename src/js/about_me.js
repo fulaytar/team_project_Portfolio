@@ -1,13 +1,11 @@
 //Izitoast
 
-<<<<<<< HEAD
 //import iziToast from "izitoast";
 //import "izitoast/dist/css/iziToast.min.css";
 
 //Бібліотека Axios
 
 //import axios from 'axios';
-=======
 const arrow = document.querySelectorAll('.arrow');
 const ac = document.querySelector('.accordion-container');
 const container = document.querySelector('.accordion-container');
@@ -28,24 +26,10 @@ ac.addEventListener('click', event => {
     }
   }
 });
->>>>>>> parent of bd124e1 (refactoring)
 
-//Swiper.js
+const nextArrow = document.querySelector('.arrow-next');
 
-<<<<<<< HEAD
-//import Swiper from 'swiper';
-// import Swiper styles
-//import 'swiper/css';
-//const swiper = new Swiper(...);
-
-//Accordion
-
-//import Accordion from 'accordion-js';
-//import 'accordion-js/dist/accordion.min.css';
-
-/* Видаляй зайве, якщо не використавуєш */
-=======
-const swiper = new Swiper('.swiper', {
+const aboutMeswiper = new Swiper('.swiper4', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
@@ -67,4 +51,3 @@ if (window.innerWidth > 1440) {
   swiper.params.slidesPerView = 6;
   swiper.update();
 }
->>>>>>> parent of bd124e1 (refactoring)
