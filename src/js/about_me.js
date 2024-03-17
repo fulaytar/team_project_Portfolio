@@ -26,22 +26,22 @@ container.addEventListener('click', event => {
 
 const nextArrow = document.querySelector('.arrow-next');
 
-const swiper = new Swiper('.swiper2', {
+const AboutMeSwiper = new Swiper('.swiper2', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
 });
 
 nextArrow.addEventListener('click', () => {
-  swiper.slideNext();
+  AboutMeSwiper.slideNext();
 });
 
 if (window.innerWidth > 767 && window.innerWidth < 1440) {
-  swiper.params.slidesPerView = 3;
-  swiper.update();
+  AboutMeSwiper.params.slidesPerView = 3;
+  AboutMeSwiper.update();
 }
 
 if (window.innerWidth >= 1440) {
-  swiper.params.slidesPerView = 6;
-  swiper.update();
+  AboutMeSwiper.params.slidesPerView = 6;
+  AboutMeSwiper.update();
 }
