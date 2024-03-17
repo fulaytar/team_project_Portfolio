@@ -27,7 +27,7 @@ const markup = reviews.map(({avatar_url, author, review}) =>
     .join("");
   reviewsList.insertAdjacentHTML("beforeend", markup);
 
-  const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper('.swiper3', {
   modules: [Navigation, Keyboard, Mousewheel],
   slidesPerView: 1,
   spaceBetween: 16,
