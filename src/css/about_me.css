@@ -32,3 +32,278 @@ font-family: var(--font-cap-extrabold);
 color: var(--main-black-color);
 ====Як прописувати колір====
 */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.about-me-section {
+  padding-bottom: 64px;
+  background-color: var(--main-black-color);
+}
+.about-me-box {
+  width: 343px;
+  height: 500px;
+  margin-bottom: 16px;
+  background-color: var(--secondary-color);
+  border-radius: 24px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.about-me-text {
+  padding: 32px 32px 0 32px;
+  font-family: var(--font-cap-medium);
+  font-size: 24px;
+  line-height: 117%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--accent-white-color);
+}
+
+.about-me-img {
+  border-radius: 24px;
+}
+
+.about-me-functional {
+  color: var(--accent-color);
+}
+.about-me-websites {
+  color: rgba(250, 250, 250, 0.4);
+}
+.accordion-container .ac {
+  margin-top: 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+}
+
+.accordion-container .ac .ac-header {
+  padding-top: 25px;
+  padding-bottom: 40px;
+  font-family: var(--font-cap-semibold);
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.4);
+  position: relative;
+}
+
+.accordion-container .ac .ac-header .ac-trigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+}
+
+.second .accordion-container .ac .ac-header .ac-trigger::after {
+  content: '';
+}
+
+.accordion-container .ac .ac-trigger::after {
+  content: '';
+}
+
+.arrow {
+  width: 18px;
+  height: 18px;
+  fill: var(--accent-white-color);
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.about-me-menu-text-list p {
+  font-family: var(--font-cap-medium);
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: var(--accent-white-color);
+}
+.about-me-menu-text-list:first-child {
+  margin-bottom: 32px;
+}
+.about-me-menu-text {
+  margin-bottom: 20px;
+}
+
+.about-me-menu-role-list p {
+  font-family: var(--font-cap-medium);
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: var(--accent-white-color);
+}
+
+.about-me-menu-role {
+  margin-bottom: 20px;
+}
+
+.about-me-menu-education-list {
+  font-family: var(--font-cap-medium);
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: var(--accent-white-color);
+}
+
+.about-me-menu-education {
+  margin-bottom: 20px;
+}
+
+.third {
+  position: relative;
+}
+.swiper-slide-active .swiper-slide-container {
+  background-color: var(--accent-color);
+  overflow: hidden;
+}
+
+.swiper-slide-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 100%;
+}
+
+.swiper-slide-container p {
+  font-family: var(--font-cap-medium);
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+}
+
+.third .arrow-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  background: transparent;
+  line-height: 0;
+  border: none;
+  fill: none;
+}
+
+.arrow-next-svg {
+  stroke: var(--dark-grey-color);
+}
+
+.third .swiper {
+  width: 260px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .flex {
+    gap: 64px;
+  }
+
+  .about-me-box {
+    width: 704px;
+    height: 700px;
+  }
+  .about-me-text {
+    padding: 64px 64px 436px 64px;
+    font-size: 38px;
+    line-height: 105%;
+  }
+
+  .about-me-menu-text {
+    margin-bottom: 32px;
+  }
+
+  .accordion-container .ac .ac-header {
+    padding-top: 34px;
+    padding-bottom: 46px;
+  }
+
+  .about-me-menu-role {
+    margin-bottom: 32px;
+  }
+
+  .about-me-menu-education {
+    margin-bottom: 32px;
+  }
+
+  .arrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  .swiper-slide-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .third .swiper {
+    width: 600px;
+  }
+
+  .swiper-slide-container p {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    .about-me-menu {
+      display: flex;
+      gap: 16px;
+    }
+
+    .about-me-box {
+      width: 680px;
+    }
+    .about-me-img {
+      width: 680px;
+      height: 700px;
+    }
+
+    .about-me-menu-text {
+      width: 612px;
+      height: 320px;
+      margin-left: 696px;
+    }
+    .about-me-menu-role {
+      width: 284px;
+      height: 92px;
+      margin-left: 696px;
+    }
+    .about-me-menu-education {
+      width: 465px;
+      height: 140px;
+      margin-left: 696px;
+    }
+
+    .third .swiper {
+      width: 1200px;
+    }
+  }
+}
