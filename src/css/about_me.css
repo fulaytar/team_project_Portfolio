@@ -51,7 +51,7 @@ color: var(--main-black-color);
   background-color: var(--main-black-color);
 }
 .about-me-box {
-  width: 343px;
+  max-width: 343px;
   height: 500px;
   margin-bottom: 16px;
   background-color: var(--secondary-color);
@@ -84,14 +84,14 @@ color: var(--main-black-color);
 .about-me-websites {
   color: rgba(250, 250, 250, 0.4);
 }
-.accordion-container .ac {
+.accordion-container .accordion {
   margin-top: 0;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgba(250, 250, 250, 0.2);
 }
 
-.accordion-container .ac .ac-header {
+.accordion-container .accordion .accordion-header {
   padding-top: 25px;
   padding-bottom: 40px;
   font-family: var(--font-cap-semibold);
@@ -103,7 +103,7 @@ color: var(--main-black-color);
   position: relative;
 }
 
-.accordion-container .ac .ac-header .ac-trigger {
+.accordion-container .accordion .accordion-header .accordion-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,11 +119,15 @@ color: var(--main-black-color);
   border: 1px solid rgba(250, 250, 250, 0.2);
 }
 
-.second .accordion-container .ac .ac-header .ac-trigger::after {
+.second
+  .accordion-container
+  .accordion
+  .accordion-header
+  .accordion-button::after {
   content: '';
 }
 
-.accordion-container .ac .ac-trigger::after {
+.accordion-container .accordion .accordion-button::after {
   content: '';
 }
 
@@ -216,7 +220,7 @@ color: var(--main-black-color);
   stroke: var(--dark-grey-color);
 }
 
-.third .swiper {
+.third .swiper4 {
   width: 260px;
   margin-left: 0;
   margin-right: 0;
@@ -228,6 +232,7 @@ color: var(--main-black-color);
   }
 
   .about-me-box {
+    max-width: none;
     width: 704px;
     height: 700px;
   }
@@ -241,7 +246,7 @@ color: var(--main-black-color);
     margin-bottom: 32px;
   }
 
-  .accordion-container .ac .ac-header {
+  .accordion-container .ac .accordion-header {
     padding-top: 34px;
     padding-bottom: 46px;
   }
@@ -264,7 +269,7 @@ color: var(--main-black-color);
     height: 200px;
   }
 
-  .third .swiper {
+  .third .swiper4 {
     width: 600px;
   }
 
@@ -302,7 +307,7 @@ color: var(--main-black-color);
       margin-left: 696px;
     }
 
-    .third .swiper {
+    .third .swiper4 {
       width: 1200px;
     }
   }
