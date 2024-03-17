@@ -27,10 +27,6 @@ font-family: var(--font-cap-extrabold);
 --accent-color: #ED3B44;
 --accent-white-color: #FAFAFA;
 =======Кольори======
-
-====Як прописувати колір====
-color: var(--main-black-color);
-====Як прописувати колір====
 */
 
 .visually-hidden {

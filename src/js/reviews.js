@@ -26,11 +26,11 @@ function createReviewsMarkup(reviews) {
     .join("");
   reviewsList.insertAdjacentHTML("beforeend", markup);
 
+
   const swiper_reviews = new Swiper('.swiper6', {
     modules: [Navigation, Keyboard, Mousewheel],
     slidesPerView: 1,
     spaceBetween: 16,
-
     breakpoints: {
       768: {
         slidesPerView: 2,

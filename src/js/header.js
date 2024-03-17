@@ -25,9 +25,8 @@ const header_burger_btn = document.querySelector(".burger");
 const mobileModal = document.querySelector('.mob-menu');
 
 header_close_btn.addEventListener("click", function() {
-    header_burger_btn.classList.toggle("activ-burger");
-    mobileModal.classList.toggle("is-open");
-    console.log(mobileModal);
+    header_burger_btn.classList.remove("activ-burger");
+    mobileModal.classList.add("is-open");
 
     // Додаємо відслідковувач події прокрутки після кліку на header_close_btn
     window.addEventListener("scroll", scrollHandler);
@@ -35,7 +34,7 @@ header_close_btn.addEventListener("click", function() {
 
 function scrollHandler() {
     // Перевіряємо, чи прокручено сторінку вниз
-    if (window.scrollY > 0) {
+    if (window.scrollY > 5) {
         // Викликаємо функцію clickModalX() для закриття модального вікна
         clickModalX();
 
@@ -66,7 +65,8 @@ const cssText = `
 
 openMenuList.addEventListener('click', menuHandler);
 
-function menuHandler() {
+function menuHandler(event) {
+    event.preventDefault()
     if (status) {
          closeMenu();
         return;
@@ -112,11 +112,9 @@ function openMenu() {
 function checkScroll() {
     // Отримати кількість пікселів, на які прокручено сторінку по вертикалі
     const scrolledPixels = window.scrollY;
-    console.log('Прокручено на ' + scrolledPixels + ' пікселів.');
-
     // Тепер ви можете використати це значення для вашої логіки
     // Наприклад, ви можете перевірити, чи сторінка прокручена на певну кількість пікселів і виконати відповідні дії
-     if (scrolledPixels > 160 && status) {
+     if (scrolledPixels > 10) {
          closeMenu();
          window.removeEventListener("scroll", checkScroll);
     } 
@@ -129,16 +127,39 @@ header_close_btn_modal.addEventListener("click", clickModalX);
 header_close_btn_modal.addEventListener('scroll', notScroll);
 
 function clickModalX() {
-    header_burger_btn_modal.classList.toggle("activ-burger");
-    header_burger_btn.classList.toggle("activ-burger");
-    mobileModal.classList.toggle("is-open");
+    
+    header_burger_btn_modal.classList.remove("activ-burger");
+    header_burger_btn.classList.remove("activ-burger");
+    mobileModal.classList.remove("is-open");
+    const links=document.querySelectorAll('.list-open-item');
+    console.log(links)
 }
 
 function notScroll() {
     let scrolledPixels = window.scrollY;
-    console.log(scrolledPixels);
-    if (scrolledPixels > 5) {
+    if (scrolledPixels > 1) {
+        header_burger_btn.classList.remove("activ-burger");
         clickModalX();
         window.removeEventListener("scroll", notScroll);
+
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const menuItems = document.querySelectorAll(".list-open-item a");
+    clickModalX();
+    menuItems.forEach(function(item) {
+      item.addEventListener("click", function(event) {
+        
+        event.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        // Додаємо або видаляємо клас "is-open" відповідно до потреби
+        document.querySelector(".mob-menu").classList.remove("is-open");
+  
+        // Прокручуємо до цільового елемента
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  });

@@ -31,7 +31,7 @@ font-family: var(--font-cap-extrabold);
 
 .reviews-section {
   background-color: var(--main-black-color);
-  padding: 96px 0;
+  padding-top: 64px;
 }
 
 .reviews-header {
@@ -88,6 +88,7 @@ font-family: var(--font-cap-extrabold);
     width: 0;
     height: 0;
   }
+
 
 div.swiper6 {
   display: flex;
@@ -175,13 +176,21 @@ li.not-found-item {
 }
 
 @media screen and (min-width: 768px) {
+
   div.swiper6, li.not-found-item {
   width: 704px;
+  }
+  .reviews-section {
+    padding-top: 96px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   div.swiper6, li.not-found-item {
+
   width: 1376px;
+  }
+  .reviews-section {
+    padding-top: 164px;
   }
 }
