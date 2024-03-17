@@ -1,21 +1,19 @@
-//Izitoast
+window.addEventListener('load', function () {
+  const marquee = selector => {
+    const parentSelector = document.querySelector(selector);
+    const clone = parentSelector.innerHTML;
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
 
-//import iziToast from "izitoast";
-//import "izitoast/dist/css/iziToast.min.css";
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        parentSelector.classList.add('animate-marquee');
+      } else {
+        parentSelector.classList.remove('animate-marquee');
+      }
+    });
+    observer.observe(parentSelector);
+  };
 
-//Бібліотека Axios
-//import axios from 'axios';
-
-//Swiper.js
-
-//import Swiper from 'swiper';
-// import Swiper styles
-//import 'swiper/css';
-//const swiper = new Swiper(...);
-
-//Accordion
-
-//import Accordion from 'accordion-js';
-//import 'accordion-js/dist/accordion.min.css';
-
-/* Видаляй зайве, якщо не використавуєш */
+  marquee('.covers-list');
+});
