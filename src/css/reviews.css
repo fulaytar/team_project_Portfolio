@@ -89,7 +89,7 @@ font-family: var(--font-cap-extrabold);
     height: 0;
   }
 
-div.swiper {
+div.swiper6 {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -175,13 +175,13 @@ li.not-found-item {
 }
 
 @media screen and (min-width: 768px) {
-  div.swiper, li.not-found-item {
+  div.swiper6, li.not-found-item {
   width: 704px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  div.swiper, li.not-found-item {
+  div.swiper6, li.not-found-item {
   width: 1376px;
   }
 }
