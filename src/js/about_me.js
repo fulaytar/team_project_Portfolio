@@ -45,7 +45,7 @@ if (window.innerWidth > 767 && window.innerWidth < 1440) {
   swiper.update();
 }
 
-if (window.innerWidth > 1440) {
+if (window.innerWidth >= 1440) {
   swiper.params.slidesPerView = 6;
   swiper.update();
 }
