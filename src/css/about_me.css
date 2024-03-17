@@ -143,10 +143,10 @@ font-family: var(--font-cap-extrabold);
   border: 1px solid rgba(250, 250, 250, 0.2);
 }
 
-/*  */
 .arrow {
   width: 18px;
   height: 18px;
+  transition: transform 0.4s ease-out;
   fill: var(--accent-white-color);
 }
 
