@@ -28,6 +28,7 @@ font-family: var(--font-cap-extrabold);
 --accent-white-color: #FAFAFA;
 =======Кольори======
 */
+*/
 
 .visually-hidden {
   position: absolute;
@@ -43,10 +44,11 @@ font-family: var(--font-cap-extrabold);
 }
 
 .about-me-section {
+  padding-bottom: 64px;
   background-color: var(--main-black-color);
 }
 .about-me-box {
-  width: auto;
+  width: 343px;
   height: 500px;
   margin-bottom: 16px;
   background-color: var(--secondary-color);

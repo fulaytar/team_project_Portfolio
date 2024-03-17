@@ -26,7 +26,7 @@ container.addEventListener('click', event => {
 
 const nextArrow = document.querySelector('.arrow-next');
 
-const swiper = new Swiper('.swiper2', {
+const swiper = new Swiper('.swiper', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
@@ -41,7 +41,7 @@ if (window.innerWidth > 767 && window.innerWidth < 1440) {
   swiper.update();
 }
 
-if (window.innerWidth >= 1440) {
+if (window.innerWidth > 1440) {
   swiper.params.slidesPerView = 6;
   swiper.update();
 }
