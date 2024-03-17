@@ -1,22 +1,47 @@
-//Izitoast
+'use strict';
+import Swiper from 'swiper';
+import 'swiper/css';
+import Accordion from 'accordion-js';
+// import 'accordion-js/dist/accordion.min.css';
 
-//import iziToast from "izitoast";
-//import "izitoast/dist/css/iziToast.min.css";
+const arrow = document.querySelectorAll('.arrow');
+const container = document.querySelector('.accordion-wrapper');
 
-//Бібліотека Axios
+const aboutMeAccordion = new Accordion(container, {
+  showMultiple: true,
+});
 
-//import axios from 'axios';
+container.addEventListener('click', event => {
+  var button = event.target.closest('button');
+  if (button && button.tagName === 'BUTTON') {
+    if (button.id === 'ac-trigger-0') {
+      arrow[0].classList.toggle('rotate');
+    } else if (button.id === 'ac-trigger-1') {
+      arrow[1].classList.toggle('rotate');
+    } else if (button.id === 'ac-trigger-2') {
+      arrow[2].classList.toggle('rotate');
+    }
+  }
+});
 
-//Swiper.js
+const nextArrow = document.querySelector('.arrow-next');
 
-//import Swiper from 'swiper';
-// import Swiper styles
-//import 'swiper/css';
-//const swiper = new Swiper(...);
+const swiper = new Swiper('.swiper', {
+  loop: true,
+  slidesPerView: 2,
+  spaceBetween: 0,
+});
 
-//Accordion
+nextArrow.addEventListener('click', () => {
+  swiper.slideNext();
+});
 
-//import Accordion from 'accordion-js';
-//import 'accordion-js/dist/accordion.min.css';
+if (window.innerWidth > 767 && window.innerWidth < 1440) {
+  swiper.params.slidesPerView = 3;
+  swiper.update();
+}
 
-/* Видаляй зайве, якщо не використавуєш */
+if (window.innerWidth > 1440) {
+  swiper.params.slidesPerView = 6;
+  swiper.update();
+}

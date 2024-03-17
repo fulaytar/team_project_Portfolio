@@ -1,21 +1,19 @@
-//Izitoast
+// Smooth scrool behavior for all anchors
+const anchors = document.querySelectorAll('a[href^="#"]');
+anchors.forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    setTimeout(() => {
+      this.blur();
+    }, 2000);
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
+    });
+  });
+});
 
-//import iziToast from "izitoast";
-//import "izitoast/dist/css/iziToast.min.css";
-
-//Бібліотека Axios
-//import axios from 'axios';
-
-//Swiper.js
-
-//import Swiper from 'swiper';
-// import Swiper styles
-//import 'swiper/css';
-//const swiper = new Swiper(...);
-
-//Accordion
-
-//import Accordion from 'accordion-js';
-//import 'accordion-js/dist/accordion.min.css';
-
-/* Видаляй зайве, якщо не використавуєш */
+// *fix id for footer section*
+const footerSection = document.querySelector('.footer');
+if (footerSection.getAttribute('id') != 'order') {
+  footerSection.setAttribute('id', 'order');
+}
