@@ -239,12 +239,12 @@ screen and (min-device-pixel-ratio: 2) {
     .close-modal.burger-modal.activ-burger:before {
         transform: rotate(-135deg);
         bottom: 0;
-        top: 50%;
+        top: 10px;
     }
 
     .close-modal .burger-modal.activ-burger:after {
         transform: rotate(135deg);
-        top: 50%;
+        top: 10px;
     }
 
     .list-open-modal {
