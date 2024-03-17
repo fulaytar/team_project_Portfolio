@@ -106,8 +106,6 @@ input:-webkit-autofill:focus {
   transition: background-color 0s 600000s, color 0s 600000s !important;
 }
 
-.work-together__link {
-}
 .work-together__link a {
   display: inline-grid;
   justify-content: center;
@@ -206,9 +204,6 @@ input:-webkit-autofill:focus {
     padding-right: 32px;
   }
 
-  .section {
-    padding-bottom: 96px;
-  }
   .footer {
     padding-bottom: 169px;
   }
@@ -254,9 +249,6 @@ input:-webkit-autofill:focus {
 @media screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
-  }
-  .section {
-    padding-bottom: 164px;
   }
   .grid {
     grid-template-columns: 844px 1fr;

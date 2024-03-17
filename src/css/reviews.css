@@ -31,6 +31,7 @@ font-family: var(--font-cap-extrabold);
 
 .reviews-section {
   background-color: var(--main-black-color);
+  padding-top: 64px;
 }
 
 .reviews-header {
@@ -177,10 +178,16 @@ li.not-found-item {
   div.swiper3, li.not-found-item {
   width: 704px;
   }
+  .reviews-section {
+    padding-top: 96px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   div.swiper3, li.not-found-item {
   width: 1376px;
+  }
+  .reviews-section {
+    padding-top: 164px;
   }
 }
