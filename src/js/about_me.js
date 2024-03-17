@@ -29,7 +29,7 @@ ac.addEventListener('click', event => {
 
 const nextArrow = document.querySelector('.arrow-next');
 
-const aboutMeswiper = new Swiper('.swiper4', {
+const swiper = new Swiper('.swiper', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
