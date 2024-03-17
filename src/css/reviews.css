@@ -79,7 +79,14 @@ font-family: var(--font-cap-extrabold);
   letter-spacing: -0.32px;
   height: 120px;
   overflow-y: scroll;
-}
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  }
+    
+   .review-text::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 
 div.swiper3 {
   display: flex;
