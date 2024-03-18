@@ -153,14 +153,9 @@ color: var(--main-black-color);
 
 /* ==================== Benefits Desktop style ====================  */
 @media screen and (min-width: 1440px) {
-  .benefits-section .container {
+  .benefits-title-list-wrapper {
     display: flex;
-    flex-wrap: wrap;
-  }
-
-  .benefits-title {
-    width: 284px;
-    margin-right: 412px;
+    justify-content: space-between;
   }
 
   .benefits-list {
