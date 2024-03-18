@@ -30,6 +30,9 @@ const AboutMeSwiper = new Swiper('.swiper2', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
+  navigation: {
+    nextEl: '.arrow-next',
+  },
   breakpoints: {
     767: {
       slidesPerView: 3,
@@ -38,8 +41,4 @@ const AboutMeSwiper = new Swiper('.swiper2', {
       slidesPerView: 6,
     },
   },
-});
-
-nextArrow.addEventListener('click', () => {
-  AboutMeSwiper.slideNext();
 });
