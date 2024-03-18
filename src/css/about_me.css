@@ -48,7 +48,7 @@ font-family: var(--font-cap-extrabold);
   background-color: var(--main-black-color);
 }
 .about-me-box {
-  width: 343px;
+  max-width: 343px;
   height: 500px;
   margin-bottom: 16px;
   background-color: var(--secondary-color);
@@ -127,6 +127,7 @@ font-family: var(--font-cap-extrabold);
   color: rgba(250, 250, 250, 0.4);
   position: relative;
 }
+
 .accordion-button {
   display: flex;
   justify-content: center;
@@ -247,6 +248,7 @@ font-family: var(--font-cap-extrabold);
   }
 
   .about-me-box {
+    max-width: none;
     width: 704px;
     height: 700px;
   }
