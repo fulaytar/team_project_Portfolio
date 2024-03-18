@@ -4,7 +4,6 @@
     padding-bottom: 64px;
     overflow: hidden;
 }
-
 .faq-header {
     font-family: var(--font-cap-semibold);
     font-size: 16px;
@@ -124,7 +123,6 @@
         width: 40px;
         height: 40px;
     }
-
     .faq-section {
         padding-bottom: 96px;
     }
@@ -171,10 +169,10 @@
     .faq-item:nth-last-child(-n + 3) {
         padding-left: 30px;
     }
-
     .faq-section {
         padding-bottom: 164px;
     }
+
 
     .faq-item-btn {
         padding-right: 50px;
