@@ -28,7 +28,6 @@ font-family: var(--font-cap-extrabold);
 --accent-white-color: #FAFAFA;
 =======Кольори======
 */
-*/
 
 .visually-hidden {
   position: absolute;
@@ -232,6 +231,10 @@ font-family: var(--font-cap-extrabold);
   width: 28px;
   height: 28px;
   stroke: var(--dark-grey-color);
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.third .sbn .arrow-next .arrow-next-svg:hover{
+  stroke: var(--accent-white-color);
 }
 .third .sbn {
   border: none;
