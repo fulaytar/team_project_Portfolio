@@ -46,7 +46,7 @@ font-family: var(--font-cap-extrabold);
   background-color: var(--main-black-color);
 }
 .about-me-box {
-  width: auto;
+  max-width: 343px;
   height: 500px;
   margin-bottom: 16px;
   background-color: var(--secondary-color);
@@ -247,6 +247,7 @@ font-family: var(--font-cap-extrabold);
   }
 
   .about-me-box {
+    max-width: none;
     width: 704px;
     height: 700px;
   }
