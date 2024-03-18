@@ -132,7 +132,6 @@ function clickModalX() {
     header_burger_btn.classList.remove("activ-burger");
     mobileModal.classList.remove("is-open");
     const links=document.querySelectorAll('.list-open-item');
-    console.log(links)
 }
 
 function notScroll() {
