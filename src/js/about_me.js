@@ -14,7 +14,7 @@ const aboutMeAccordion = new Accordion(container, {
 aboutMeAccordion.open(0);
 
 container.addEventListener('click', event => {
-  var button = event.target.closest('button');
+  const button = event.target.closest('button');
   if (button && button.tagName === 'BUTTON') {
     if (button.id === 'ac-trigger-0') {
       arrow[0].classList.toggle('rotate');
@@ -32,7 +32,6 @@ const AboutMeSwiper = new Swiper('.swiper2', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
-
   modules: [Navigation],
 
   navigation: {
@@ -48,3 +47,4 @@ const AboutMeSwiper = new Swiper('.swiper2', {
     },
   },
 });
+

@@ -43,6 +43,7 @@ font-family: var(--font-cap-extrabold);
 }
 
 .about-me-section {
+  padding-bottom: 64px;
   background-color: var(--main-black-color);
 }
 .about-me-box {
@@ -230,8 +231,11 @@ font-family: var(--font-cap-extrabold);
   width: 28px;
   height: 28px;
   stroke: var(--dark-grey-color);
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.third .sbn .arrow-next .arrow-next-svg:hover{
+  stroke: var(--accent-white-color);
+}
 .third .sbn {
   border: none;
   position: absolute;
