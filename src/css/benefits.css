@@ -149,6 +149,17 @@ color: var(--main-black-color);
 /* ==================== /Benefits Tablet style ====================  */
 
 /* ==================== Benefits Desktop style ====================  */
+@media screen and (hover: hover) {
+  .benefits-anchor-btn {
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .benefits-anchor-btn:hover {
+    border-color: var(--accent-white-color);
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .benefits-title-list-wrapper {
     display: flex;
@@ -164,15 +175,6 @@ color: var(--main-black-color);
 
   .benefits-item {
     width: 332px;
-  }
-
-  .benefits-anchor-btn {
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .benefits-anchor-btn:hover {
-    border-color: var(--accent-white-color);
   }
 }
 /* ==================== /Benefits Desktop style ====================  */
