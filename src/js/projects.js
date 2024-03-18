@@ -1,11 +1,11 @@
-'use strict'
+// 'use strict'
 // Core version + navigation, keyboard, mousewheel modules:
 import Swiper from 'swiper';
 import { Navigation, Keyboard, Mousewheel, Parallax } from 'swiper/modules';
 
 // Import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/bundle';
+// import 'swiper/css';
+// import 'swiper/css/bundle';
 
 // Init Swiper:
 const swiper = new Swiper('.swiper1', {
@@ -20,8 +20,8 @@ const swiper = new Swiper('.swiper1', {
 
   // Navigation arrows
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-btn-next',
+        prevEl: '.swiper-btn-prev',
     },
 
     keyboard: {

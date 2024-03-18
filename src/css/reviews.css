@@ -41,13 +41,16 @@ font-family: var(--font-cap-extrabold);
   text-transform: uppercase;
   line-height: 1.5;
   letter-spacing: -0.32px;
+  align-self: start;
 }
 
 .reviews-container {
   display: flex;
   flex-direction: column;
   gap: 32px;  
-  padding: 0px;
+  /* padding: 0px; */
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -89,13 +92,15 @@ font-family: var(--font-cap-extrabold);
     height: 0;
   }
 
-div.swiper3 {
+
+div.swiper6 {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  width: 359px;
-  height: 386px;
+  /* width: 343px; */
+  /* height: 386px; */
   margin: 0;
+  overflow: hidden;
 }
 
 .reviews {
@@ -120,8 +125,8 @@ li.review-item {
   gap: 12px;
 }
 
- div.swiper-button-prev,
- div.swiper-button-next {
+.swiper-button-prev.swiper-btn-prev-review,
+.swiper-button-next.swiper-btn-next-review {
   position: static;
   margin-top: 0;
   display: inline-flex;
@@ -175,7 +180,8 @@ li.not-found-item {
 }
 
 @media screen and (min-width: 768px) {
-  div.swiper3, li.not-found-item {
+
+  div.swiper6, li.not-found-item {
   width: 704px;
   }
   .reviews-section {
@@ -184,7 +190,8 @@ li.not-found-item {
 }
 
 @media screen and (min-width: 1440px) {
-  div.swiper3, li.not-found-item {
+  div.swiper6, li.not-found-item {
+
   width: 1376px;
   }
   .reviews-section {

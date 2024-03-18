@@ -3,7 +3,9 @@ const anchors = document.querySelectorAll('a[href^="#"]');
 anchors.forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
-
+    setTimeout(() => {
+      this.blur();
+    }, 2000);
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth',
     });
