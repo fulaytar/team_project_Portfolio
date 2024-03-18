@@ -11,6 +11,7 @@ const container = document.querySelector('.accordion-wrapper');
 const aboutMeAccordion = new Accordion(container, {
   showMultiple: true,
 });
+aboutMeAccordion.open(0);
 
 container.addEventListener('click', event => {
   var button = event.target.closest('button');
@@ -31,7 +32,6 @@ const AboutMeSwiper = new Swiper('.swiper2', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
-  
   modules: [Navigation],
 
   navigation: {
@@ -47,3 +47,4 @@ const AboutMeSwiper = new Swiper('.swiper2', {
     },
   },
 });
+
