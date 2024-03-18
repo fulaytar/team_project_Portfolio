@@ -113,12 +113,9 @@ color: var(--main-black-color);
   letter-spacing: -0.02em;
   color: var(--accent-white-color);
   text-align: center;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-tap-highlight-color: transparent;
 }
 
-.benefits-anchor-btn:hover,
 .benefits-anchor-btn:focus {
   border-color: var(--accent-white-color);
 }
@@ -167,6 +164,15 @@ color: var(--main-black-color);
 
   .benefits-item {
     width: 332px;
+  }
+
+  .benefits-anchor-btn {
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .benefits-anchor-btn:hover {
+    border-color: var(--accent-white-color);
   }
 }
 /* ==================== /Benefits Desktop style ====================  */
