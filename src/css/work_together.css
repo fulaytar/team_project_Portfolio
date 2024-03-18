@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--main-black-color);
+  background-color: #000;
   padding: 32px 0;
   color: #fff;
 }
@@ -7,21 +7,21 @@
   color: #fff;
   font-family: var(--font-cap-medium);
 }
-.work-together__title picture {
+.work-together picture {
   display: inline-block;
   max-width: 44px;
 }
-.work-together__title .work-together__title__text h3 {
+.work-together h3 {
   font-size: 40px;
   line-height: 1;
   font-family: var(--font-cap-medium);
   letter-spacing: 3px;
   text-transform: uppercase;
 }
-.work-together__title .work-together__title__text_mark {
+.work-together .work-together__title__text_mark {
   color: #ED3B44;
 }
-.work-together__title .work-together__title__text p {
+.work-together .work-together__title__text p {
   padding-top: 10px;
 }
 
@@ -106,6 +106,8 @@ input:-webkit-autofill:focus {
   transition: background-color 0s 600000s, color 0s 600000s !important;
 }
 
+.work-together__link {
+}
 .work-together__link a {
   display: inline-grid;
   justify-content: center;
@@ -183,11 +185,6 @@ input:-webkit-autofill:focus {
   pointer-events: all;
 }
 
-@media  screen and (max-width:374px) {
-  .work-together__link a:first-child{
-    margin-bottom:12px;
-  }
-}
 
 @media screen and (min-width: 375px) {
   .container {
@@ -204,6 +201,9 @@ input:-webkit-autofill:focus {
     padding-right: 32px;
   }
 
+  .section {
+    padding-bottom: 96px;
+  }
   .footer {
     padding-bottom: 169px;
   }
@@ -212,10 +212,10 @@ input:-webkit-autofill:focus {
     padding: 88px 0 168px 0;
   }
 
-  .work-together__title picture {
+  .work-together picture {
     max-width: 70px;
   }
-  .work-together__title .work-together__title__text h3 {
+  .work-together h3 {
     font-size: 64px;
   }
 
@@ -249,6 +249,9 @@ input:-webkit-autofill:focus {
 @media screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
+  }
+  .section {
+    padding-bottom: 164px;
   }
   .grid {
     grid-template-columns: 844px 1fr;
