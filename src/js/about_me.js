@@ -31,7 +31,7 @@ const AboutMeSwiper = new Swiper('.swiper2', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
-
+  
   modules: [Navigation],
 
   navigation: {

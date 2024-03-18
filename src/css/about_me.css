@@ -28,6 +28,7 @@ font-family: var(--font-cap-extrabold);
 --accent-white-color: #FAFAFA;
 =======Кольори======
 */
+*/
 
 .visually-hidden {
   position: absolute;
@@ -43,6 +44,7 @@ font-family: var(--font-cap-extrabold);
 }
 
 .about-me-section {
+  padding-bottom: 64px;
   background-color: var(--main-black-color);
 }
 .about-me-box {
@@ -225,13 +227,11 @@ font-family: var(--font-cap-extrabold);
   border: none;
   fill: none;
 }
-
 .third .sbn .arrow-next .arrow-next-svg {
   width: 28px;
   height: 28px;
   stroke: var(--dark-grey-color);
 }
-
 .third .sbn {
   border: none;
   position: absolute;
