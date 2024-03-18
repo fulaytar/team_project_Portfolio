@@ -94,6 +94,7 @@ font-family: var(--font-cap-extrabold);
 
 
 div.swiper6 {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 32px;
