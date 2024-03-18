@@ -35,10 +35,13 @@ color: var(--main-black-color);
 .header-svg-icon {
     fill: var(--accent-white-color);
 }
+.header-title{
+    color: var(--accent-white-color);
+    font-weight: 100;
+    letter-spacing: -0.02em;
 
+}
 .header {
-    padding-left: 16px;
-    padding-right: 16px;
     padding-top: 32px;
     position: absolute;
     left: 0;
@@ -141,6 +144,7 @@ color: var(--main-black-color);
     color:var(--accent-color)
 }
 
+
 .mob-menu {
     position: absolute;
     top: 0;
@@ -167,7 +171,6 @@ screen and (min-device-pixel-ratio: 2) {
     }
 }
 @media screen and (max-width:767px) {
-
     /*===================Активація бекдропу==========================*/
     .is-open {
         opacity: 1;
@@ -329,8 +332,14 @@ screen and (min-device-pixel-ratio: 2) {
         text-decoration-line: underline;
         background: transparent;
         border: none;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
-
+    .header_menu:hover{
+        color:var(--accent-color)
+    }
+    .list-menu-header-item {
+        transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
     .list-menu-header {
         opacity: 0;
         visibility: hidden;
@@ -345,16 +354,24 @@ screen and (min-device-pixel-ratio: 2) {
 
     .list-menu-header-item:nth-child(even) {
         transform: translateX(-500%);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 
     }
 
     .list-menu-header-item:nth-child(odd) {
         transform: translateX(500%);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 
     }
 
     .list-menu-header-item {
-        transition: all 1300ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 1000ms cubic-bezier(0.4, 0, 0.2, 1);
         opacity: 0;
         visibility: hidden;
         pointer-events: none;

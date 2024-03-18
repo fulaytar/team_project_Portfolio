@@ -57,4 +57,4 @@ addEventListener("mousemove", (e) => {
     x1 = clientX;
     y1 = clientY;
   }
-});
+},{passive: true});
