@@ -2,6 +2,7 @@
     background-color: var(--main-black-color);
     color: var(--accent-white-color);
     padding-bottom: 64px;
+    overflow: hidden;
 }
 .faq-header {
     font-family: var(--font-cap-semibold);
@@ -166,12 +167,13 @@
     }
 
     .faq-item:nth-last-child(-n + 3) {
-        /* border-right: 1px solid rgba(250, 250, 250, 0.2); */
         padding-left: 30px;
     }
     .faq-section {
         padding-bottom: 164px;
     }
+
+
     .faq-item-btn {
         padding-right: 50px;
     }
