@@ -220,20 +220,24 @@ font-family: var(--font-cap-extrabold);
 }
 
 .arrow-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
   background: transparent;
   line-height: 0;
   border: none;
   fill: none;
 }
 
-.arrow-next-svg {
+.third .sbn .arrow-next .arrow-next-svg {
   width: 28px;
   height: 28px;
   stroke: var(--dark-grey-color);
+}
+
+.third .sbn {
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .third .swiper2 {
@@ -288,7 +292,7 @@ font-family: var(--font-cap-extrabold);
     width: 600px;
   }
 
-  .arrow-next-svg {
+  .third .sbn .arrow-next .arrow-next-svg {
     width: 40px;
     height: 40px;
   }

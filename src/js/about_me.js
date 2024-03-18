@@ -1,6 +1,7 @@
 'use strict';
 import Swiper from 'swiper';
 import 'swiper/css';
+import { Navigation } from 'swiper/modules';
 import Accordion from 'accordion-js';
 // import 'accordion-js/dist/accordion.min.css';
 
@@ -30,9 +31,13 @@ const AboutMeSwiper = new Swiper('.swiper2', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
+
+  modules: [Navigation],
+
   navigation: {
-    nextEl: '.arrow-next',
+    nextEl: '.sbn',
   },
+
   breakpoints: {
     767: {
       slidesPerView: 3,
