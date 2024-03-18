@@ -98,7 +98,7 @@ div.swiper6 {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  /* width: 343px; */
+  width: 343px;
   /* height: 386px; */
   margin: 0;
   overflow: hidden;
