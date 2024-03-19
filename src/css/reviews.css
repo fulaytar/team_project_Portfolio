@@ -189,6 +189,29 @@ li.not-found-item {
   .reviews-section {
     padding-top: 96px;
   }
+  .swiper-button-prev.swiper-btn-prev-review,
+.swiper-button-next.swiper-btn-next-review {
+  width: 68px;
+  height: 68px;
+}
+.swiper-button-prev .swiper-arrow-prev,
+.swiper-button-next .swiper-arrow-next {
+  width: 32px;
+  height: 32px
+}
+.swiper-button-next .swiper-arrow-prev:hover,
+.swiper-button-prev .swiper-arrow-prev:hover,
+.swiper-button-next .swiper-arrow-next:focus,
+.swiper-button-prev .swiper-arrow-next:focus {
+  transform: scale(1.2);
+}
+
+.swiper-button-next .swiper-arrow-next:hover,
+.swiper-button-prev .swiper-arrow-next:hover,
+.swiper-button-next .swiper-arrow-prev:focus,
+.swiper-button-prev .swiper-arrow-prev:focus {
+  transform: scale(1.2);
+}
 }
 
 @media screen and (min-width: 1440px) {
