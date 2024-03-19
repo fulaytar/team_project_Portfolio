@@ -17,6 +17,9 @@ function createReviewsMarkup(reviews) {
         class="review-image"
         src="${avatar_url}"
         alt="${author}"
+        loading="lazy"
+        height="48"
+        width="48"
       />
       <div class="review-textbox">
         <h3 class="review-author">${author}</h3>
