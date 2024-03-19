@@ -43,6 +43,7 @@ font-family: var(--font-cap-extrabold);
 }
 
 .about-me-section {
+  padding-bottom: 64px;
   background-color: var(--main-black-color);
 }
 
@@ -79,6 +80,7 @@ font-family: var(--font-cap-extrabold);
   color: rgba(250, 250, 250, 0.4);
 }
 
+
 .accordion-menu {
   margin-bottom: 32px;
 }
@@ -93,13 +95,6 @@ font-family: var(--font-cap-extrabold);
   transition-timing-function: ease;
 }
 
-.accordion-item.js-enabled .accordion-panel {
-  visibility: hidden;
-}
-
-.accordion-item.is-active .accordion-panel {
-  visibility: visible;
-}
 
 .accordion-item.js-enabled .accordion-panel {
   visibility: hidden;
@@ -114,6 +109,15 @@ font-family: var(--font-cap-extrabold);
 }
 
 .accordion-item.is-active .accordion-panel {
+  visibility: visible;
+}
+
+.accordion-item.js-enabled .accordion-panel {
+  visibility: hidden;
+}
+
+.accordion-item.is-active .accordion-panel {
+
   visibility: visible;
 }
 
@@ -128,6 +132,7 @@ font-family: var(--font-cap-extrabold);
   color: rgba(250, 250, 250, 0.4);
   position: relative;
 }
+
 
 .accordion-menu .accordion-item:first-of-type .accordion-header {
   padding-top: 0;
@@ -205,10 +210,10 @@ font-family: var(--font-cap-extrabold);
   margin-bottom: 10px;
 }
 
+
 .about-me-education:last-child {
   margin-bottom: 20px;
 }
-
 .swiper-slide-active .swiper-slide-container {
   background-color: var(--accent-color);
   overflow: hidden;
@@ -232,6 +237,7 @@ font-family: var(--font-cap-extrabold);
   color: #fafafa;
 }
 
+
 .swiper-box {
   position: relative;
 }
@@ -247,6 +253,17 @@ font-family: var(--font-cap-extrabold);
   width: 28px;
   height: 28px;
   stroke: var(--dark-grey-color);
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.third .sbn .arrow-next .arrow-next-svg:hover{
+  stroke: var(--accent-white-color);
+}
+.third .sbn {
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .swiper-box .sbn {
@@ -285,10 +302,10 @@ font-family: var(--font-cap-extrabold);
     margin-bottom: 32px;
   }
 
+
   .accordion-menu {
     margin-bottom: 64px;
   }
-
   .accordion-header {
     padding-top: 34px;
     padding-bottom: 46px;
@@ -315,6 +332,7 @@ font-family: var(--font-cap-extrabold);
   .swiper-box .swiper {
     width: 600px;
   }
+
 
   .swiper-box .sbn .arrow-next .arrow-next-svg {
     width: 40px;

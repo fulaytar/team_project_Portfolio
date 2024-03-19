@@ -1,65 +1,41 @@
 <footer class="footer" id="order">
   <div class="container">
     <div class="work-together">
-      <div class="work-together__title">
-        <div class="work-together__title__text">
-          <h3>
-            <picture>
-              <source
-                media="(min-width:768px)"
-                srcset="
-                  ./img/work_together/tabletAndDesktop/large_footer_avatar.png
-                "
-              />
-              <source
-                media="(min-width:375px)"
-                srcset="./img/work_together/mobile/mobile_footer_avatar.png"
-              />
-              <img
-                src="./img/work_together/tabletAndDesktop/large_footer_avatar.png"
-                alt="avatar"
-                style="width: auto"
-              />
-            </picture>
-            Let's <span class="work-together__title__text_mark">work</span>
-            <p>together</p>
-          </h3>
-        </div>
-      </div>
 
-      <div class="work-together__form">
-        <form class="form" id="form">
-          <div class="grid">
-            <div class="grid-column">
-              <div class="input-holder">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="clients@gmail.com"
-                  class="form-control"
-                />
-              </div>
-              <div class="input-holder">
-                <input
-                  type="text"
-                  name="comment"
-                  placeholder="comments"
-                  class="form-control"
-                />
-              </div>
+      <h2>
+        <picture>
+          <source media="(min-width:768px)" 
+          srcset="./img/work_together/tabletAndDesktop/large_footer_avatar.png 1x,
+          ./img/work_together/tabletAndDesktop/large_footer_avatar@2x.png 2x">
+          <source media="(max-width:767px)" srcset="./img/work_together/mobile/mobile_footer_avatar.png 1x,
+          ./img/work_together/mobile/mobile_footer_avatar@2x.png 2x">
+          <img src="./img/work_together/tabletAndDesktop/large_footer_avatar.png" alt="avatar"  width="70" height="70">
+        </picture>
+        Let's <span class="work-together__title__text_mark">work</span>
+        <p>together</p>
+      </h2>
+
+      <form class="form work-together__form" id="form">
+        <div class="grid">
+          <div class="grid-column">
+            <div class="input-holder">
+              <input type="email" name="email" placeholder="clients@gmail.com" class="form-control">
             </div>
-            <button type="submit" class="btn-submit">Send</button>
+            <div class="input-holder">
+              <input type="text" name="comment" placeholder="comments" class="form-control">
+            </div>
           </div>
-        </form>
-      </div>
+          <button type="submit" class="btn-submit" title="send form">Send</button>
+        </div>
+      </form>
 
-      <div class="work-together__link">
+      <div class='work-together__link'>
         <a href="mailto:lloydjefferson@gmail.com">lloydjefferson@gmail.com</a>
-        <a href="tel:+380 11 1111 11 11">+380 11 1111 11 11</a>
+        <a href="tel:+380111111111">+380 11 1111 11 11</a>
       </div>
 
       <div class="modal" id="modal">
-        <button data-close-button class="modal-close__button" id="close-button">
+        <button data-close-button class="modal-close__button" id="close-button" title="close">
           &times;
         </button>
         <div class="content"></div>
