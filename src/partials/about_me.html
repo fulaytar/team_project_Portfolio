@@ -14,26 +14,41 @@
           </div>
         </li>
         <li class="about-me-menu-list">
-          <img
-          class="about-me-img"
-          src="./img/about_me/mobile/about_me_mobile_photo.jpeg"
-          srcset="
-            ./img/about_me/mobile/about_me_mobile_photo.jpeg    343w,
-            ./img/about_me/tablet_and_desktop/large_about_image.jpeg     704w,
-            ./img/about_me/mobile/about_me_mobile_photo@2x.jpeg 686w,
-            ./img/about_me/tablet_and_desktop/large_about_image@2x.jpeg 1408w
-          "
-          sizes="
-            (min-width: 1440px) 680px,
-            (min-width: 768px) 704px,
-            343px
-          "
-          width="704"
-          height="700"
-          alt="Photo of me"
-          loading="lazy"
-        />
-          
+          <picture>
+            <source
+              media="(min-width: 1440px)"
+              srcset="
+                ../img/about_me/tablet_and_desktop/large_about_image.jpeg    1x,
+                ../img/about_me/tablet_and_desktop/large_about_image@2x.jpeg 2x
+              "
+              type="image/jpg"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                ../img/about_me/tablet_and_desktop/large_about_image.jpeg    1x,
+                ../img/about_me/tablet_and_desktop/large_about_image@2x.jpeg 2x
+              "
+              type="image/jpg"
+            />
+
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ../img/about_me/mobile/about_me_mobile_photo.jpeg    1x,
+                ../img/about_me/mobile/about_me_mobile_photo@2x.jpeg 2x
+              "
+              type="image/jpg"
+            />
+            <img
+              class="about-me-img"
+              alt="Нabout-me-img"
+              width="100%"
+              height="auto"
+              loading="lazy"
+            />
+          </picture>
         </li>
       </ul>
     </div>
@@ -42,7 +57,11 @@
         <div class="accordion ac">
           <h2 class="accordion-header ac-header">
             about me
-            <button type="button" class="accordion-button ac-trigger" title="down">
+            <button
+              type="button"
+              class="accordion-button ac-trigger"
+              title="down"
+            >
               <svg class="arrow">
                 <use href="./img/icons.svg#icon-down"></use>
               </svg>
@@ -83,7 +102,11 @@
         <div class="accordion ac">
           <h2 class="accordion-header ac-header">
             role
-            <button type="button" class="accordion-button ac-trigger" title="down">
+            <button
+              type="button"
+              class="accordion-button ac-trigger"
+              title="down"
+            >
               <svg class="arrow">
                 <use href="./img/icons.svg#icon-down"></use>
               </svg>
@@ -107,7 +130,11 @@
         <div class="accordion ac">
           <h2 class="accordion-header ac-header">
             education
-            <button type="button" class="accordion-button ac-trigger" title="down">
+            <button
+              type="button"
+              class="accordion-button ac-trigger"
+              title="down"
+            >
               <svg class="arrow">
                 <use href="./img/icons.svg#icon-down"></use>
               </svg>
