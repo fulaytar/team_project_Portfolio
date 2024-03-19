@@ -7,9 +7,11 @@
   color: #fff;
   font-family: var(--font-cap-medium);
 }
+
 .work-together picture {
-  display: inline-block;
   max-width: 44px;
+  float: left;
+  margin-right: 25px;
 }
 .work-together h2 {
   font-size: 40px;
@@ -21,9 +23,11 @@
 .work-together .work-together__title__text_mark {
   color: #ED3B44;
 }
-.work-together .work-together__title__text p {
+.work-together .work-together__title__sub {
+  display: block;
   padding-top: 10px;
 }
+
 
 .work-together__form {
   padding: 64px 0 78px 0;
@@ -112,7 +116,7 @@ input:-webkit-autofill:focus {
   display: inline-grid;
   justify-content: center;
   align-items: center;
-  width: 169px;
+  /*width: 169px;*/
   height: 40px;
   padding: 10px 20px;
   box-sizing: border-box;
@@ -232,7 +236,7 @@ input:-webkit-autofill:focus {
   }
 
   .work-together__link a {
-    width: 255px;
+    /*width: 255px;*/
     height: 56px;
     padding: 18px 32px 18px 32px;
   }

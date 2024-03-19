@@ -28,10 +28,12 @@ const toggleModal = (action) => {
 
 const openModal = () => {
   toggleModal('open');
+  addEscapeKeyListener();
 };
 
 const closeModal = () => {
   toggleModal('close');
+  removeEscapeKeyListener();
 };
 
 const setRequests = async (data) => {
@@ -98,6 +100,7 @@ const createHTML = (data) => {
   content.append(titleElement, paragraphElement);
 
   openModal();
+  addEscapeKeyListener();
 };
 
 const validateInputs = () => {
@@ -147,11 +150,21 @@ const validateInputs = () => {
   return valid.length > 0;
 };
 
-document.addEventListener('keyup', (e) => {
+const escapeKeyHandler = (e) => {
   if (e.key === "Escape") {
     closeModal();
+    removeEscapeKeyListener();
   }
-});
+}
+
+const addEscapeKeyListener = () => {
+  document.addEventListener('keydown', escapeKeyHandler);
+}
+
+const removeEscapeKeyListener = () => {
+  document.removeEventListener('keydown', escapeKeyHandler);
+}
+
 closeModalButton.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
