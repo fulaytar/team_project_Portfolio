@@ -145,26 +145,21 @@
           </div>
         </li>
         <li class="about-me-menu-list">
-          <picture>
-            <!-- Tablet screen and Desktop screen  -->
-            <source
-              media="(min-width: 768px)"
-              srcset="/team_project_Portfolio/assets/large_about_image-46ec85fb.jpeg 1x, /team_project_Portfolio/assets/large_about_image@2x-88978d38.jpeg 2x"
-              type="image/jpg"
-            />
-            <!-- Mobile screen -->
-            <source
-              media="(max-width: 767px)"
-              srcset="/team_project_Portfolio/assets/about_me_mobile_photo-af0efd0b.jpeg 1x, /team_project_Portfolio/assets/about_me_mobile_photo@2x-889fbbde.jpeg 2x"
-              type="image/jpg"
-            />
-            <img
-              class="about-me-img"
-              src="/team_project_Portfolio/assets/about_me_mobile_photo-af0efd0b.jpeg"
-              alt="Photo of me"
-              loading="lazy"
-            />
-          </picture>
+          <img
+          class="about-me-img"
+          src="/team_project_Portfolio/assets/about_me_mobile_photo-af0efd0b.jpeg"
+          srcset="/team_project_Portfolio/assets/about_me_mobile_photo-af0efd0b.jpeg 343w, /team_project_Portfolio/assets/large_about_image-46ec85fb.jpeg 704w, /team_project_Portfolio/assets/about_me_mobile_photo@2x-889fbbde.jpeg 686w, /team_project_Portfolio/assets/large_about_image@2x-88978d38.jpeg 1408w"
+          sizes="
+            (min-width: 1440px) 680px,
+            (min-width: 768px) 704px,
+            343px
+          "
+          width="704"
+          height="700"
+          alt="Photo of me"
+          loading="lazy"
+        />
+          
         </li>
       </ul>
     </div>
