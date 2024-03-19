@@ -1,7 +1,6 @@
 .faq-section {
     background-color: var(--main-black-color);
     color: var(--accent-white-color);
-    padding-bottom: 64px;
     overflow: hidden;
 }
 .faq-header {
@@ -123,9 +122,6 @@
         width: 40px;
         height: 40px;
     }
-    .faq-section {
-        padding-bottom: 96px;
-    }
 
     .icon-down {
         top: 10px;
@@ -168,9 +164,6 @@
 
     .faq-item:nth-last-child(-n + 3) {
         padding-left: 30px;
-    }
-    .faq-section {
-        padding-bottom: 164px;
     }
 
 

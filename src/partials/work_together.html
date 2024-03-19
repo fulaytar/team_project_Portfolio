@@ -4,9 +4,12 @@
 
       <h2>
         <picture>
-          <source media="(min-width:768px)" srcset="../img/work_together/tabletAndDesktop/large_footer_avatar.png">
-          <source media="(min-width:375px)" srcset="../img/work_together/mobile/mobile_footer_avatar.png">
-          <img src="../img/work_together/tabletAndDesktop/large_footer_avatar.png" alt="avatar" style="width:auto;">
+          <source media="(min-width:768px)" 
+          srcset="./img/work_together/tabletAndDesktop/large_footer_avatar.png 1x,
+          ./img/work_together/tabletAndDesktop/large_footer_avatar@2x.png 2x">
+          <source media="(max-width:767px)" srcset="./img/work_together/mobile/mobile_footer_avatar.png 1x,
+          ./img/work_together/mobile/mobile_footer_avatar@2x.png 2x">
+          <img src="./img/work_together/tabletAndDesktop/large_footer_avatar.png" alt="avatar" loading="lazy" width="70" height="70">
         </picture>
         Let's <span class="work-together__title__text_mark">work</span>
         <p>together</p>
@@ -22,7 +25,7 @@
               <input type="text" name="comment" placeholder="comments" class="form-control">
             </div>
           </div>
-          <button type="submit" class="btn-submit">Send</button>
+          <button type="submit" class="btn-submit" title="send form">Send</button>
         </div>
       </form>
 
@@ -32,7 +35,9 @@
       </div>
 
       <div class="modal" id="modal">
-        <button data-close-button class="modal-close__button" id="close-button">&times;</button>
+        <button data-close-button class="modal-close__button" id="close-button" title="close">
+          &times;
+        </button>
         <div class="content"></div>
       </div>
       <div id="overlay"></div>

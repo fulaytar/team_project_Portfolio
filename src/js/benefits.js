@@ -5,15 +5,9 @@ anchors.forEach(anchor => {
     e.preventDefault();
     setTimeout(() => {
       this.blur();
-    }, 2000);
+    }, 500);
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth',
     });
   });
 });
-
-// *fix id for footer section*
-const footerSection = document.querySelector('.footer');
-if (footerSection.getAttribute('id') != 'order') {
-  footerSection.setAttribute('id', 'order');
-}

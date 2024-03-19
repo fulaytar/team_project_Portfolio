@@ -1,7 +1,7 @@
 <section id="about-me" class="section about-me-section">
   <h2 class="visually-hidden">About me</h2>
   <div class="container flex">
-    <section class="first">
+    <div class="first">
       <ul class="about-me-menu">
         <li class="about-me-menu-list">
           <div class="about-me-box">
@@ -14,39 +14,35 @@
           </div>
         </li>
         <li class="about-me-menu-list">
-          <picture>
-            <!-- Tablet screen and Desktop screen  -->
-            <source
-              media="(min-width: 768px)"
-              srcset="
-                ./img/about_me/tablet_and_desktop/large_about_image.jpeg    1x,
-                ./img/about_me/tablet_and_desktop/large_about_image@2x.jpeg 2x
-              "
-              type="image/jpg"
-            />
-            <!-- Mobile screen -->
-            <source
-              media="(max-width: 767px)"
-              srcset="
-                ./img/about_me/mobile/about_me_mobile_photo.jpeg    1x,
-                ./img/about_me/mobile/about_me_mobile_photo@2x.jpeg 2x
-              "
-              type="image/jpg"
-            />
-            <img
-              class="about-me-img"
-              src="./img/about_me/mobile/about_me_mobile_photo.jpeg"
-            />
-          </picture>
+          <img
+          class="about-me-img"
+          src="./img/about_me/mobile/about_me_mobile_photo.jpeg"
+          srcset="
+            ./img/about_me/mobile/about_me_mobile_photo.jpeg    343w,
+            ./img/about_me/tablet_and_desktop/large_about_image.jpeg     704w,
+            ./img/about_me/mobile/about_me_mobile_photo@2x.jpeg 686w,
+            ./img/about_me/tablet_and_desktop/large_about_image@2x.jpeg 1408w
+          "
+          sizes="
+            (min-width: 1440px) 680px,
+            (min-width: 768px) 704px,
+            343px
+          "
+          width="704"
+          height="700"
+          alt="Photo of me"
+          loading="lazy"
+        />
+          
         </li>
       </ul>
-    </section>
-    <section class="second">
+    </div>
+    <div class="second">
       <div class="accordion-wrapper">
         <div class="accordion ac">
           <h2 class="accordion-header ac-header">
             about me
-            <button type="button" class="accordion-button ac-trigger">
+            <button type="button" class="accordion-button ac-trigger" title="down">
               <svg class="arrow">
                 <use href="./img/icons.svg#icon-down"></use>
               </svg>
@@ -87,7 +83,7 @@
         <div class="accordion ac">
           <h2 class="accordion-header ac-header">
             role
-            <button type="button" class="accordion-button ac-trigger">
+            <button type="button" class="accordion-button ac-trigger" title="down">
               <svg class="arrow">
                 <use href="./img/icons.svg#icon-down"></use>
               </svg>
@@ -111,7 +107,7 @@
         <div class="accordion ac">
           <h2 class="accordion-header ac-header">
             education
-            <button type="button" class="accordion-button ac-trigger">
+            <button type="button" class="accordion-button ac-trigger" title="down">
               <svg class="arrow">
                 <use href="./img/icons.svg#icon-down"></use>
               </svg>
@@ -140,8 +136,8 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="third">
+    </div>
+    <div class="third">
       <div class="swiper swiper2">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
@@ -173,12 +169,12 @@
         </div>
       </div>
       <div class="swiper-button-next sbn">
-        <button type="button" class="arrow-next">
+        <button type="button" class="arrow-next" title="next">
           <svg class="arrow-next-svg">
             <use href="./img/icons.svg#arrow-right"></use>
           </svg>
         </button>
       </div>
-    </section>
+    </div>
   </div>
 </section>

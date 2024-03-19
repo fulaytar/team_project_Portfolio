@@ -14,6 +14,9 @@
     --accent-color: #ED3B44;
     --accent-white-color: #FAFAFA
 }
+main{
+    background-color: var(--main-black-color)
+}
 .star {
     transform-style: preserve-3d;
     width: 1px;

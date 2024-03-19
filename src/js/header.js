@@ -25,8 +25,8 @@ const header_burger_btn = document.querySelector(".burger");
 const mobileModal = document.querySelector('.mob-menu');
 
 header_close_btn.addEventListener("click", function() {
-    header_burger_btn.classList.remove("activ-burger");
-    mobileModal.classList.add("is-open");
+    header_burger_btn.classList.toggle("activ-burger");
+    mobileModal.classList.toggle("is-open");
 
     // Додаємо відслідковувач події прокрутки після кліку на header_close_btn
     window.addEventListener("scroll", scrollHandler);
@@ -55,7 +55,7 @@ const cssText = `
             flex-direction: column;
             row-gap: 5px;
             position: absolute;
-            left: 50.2%;
+            left: 50.6%;
             top: 119px;
             transform: translate(-50%, -50%);
             opacity: 1;
@@ -100,11 +100,14 @@ function openMenu() {
     header_list.style.cssText = cssText;
 
     const items = document.querySelectorAll('.list-menu-header-item');
-    items.forEach((item) => {
-        item.style.transform = 'translateX(0)';
-        item.style.opacity = '1';
-        item.style.visibility = 'visible';
-        item.style.pointerEvents = 'auto';
+    items.forEach((item, index) => {
+        setTimeout(() => {
+            item.style.transition = 'all 1000ms cubic-bezier(0.4, 0, 0.2, 1)';
+            item.style.transform = 'translateX(0)';
+            item.style.opacity = '1';
+            item.style.visibility = 'visible';
+            item.style.pointerEvents = 'auto';
+        }, index * 100); // Додатковий затримка для кожного елемента
     });
     status = true;
 }
