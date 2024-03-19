@@ -24,20 +24,21 @@ const header_close_btn = document.querySelector(".close");
 const header_burger_btn = document.querySelector(".burger");
 const mobileModal = document.querySelector('.mob-menu');
 
-header_close_btn.addEventListener("click", function() {
-    header_burger_btn.classList.toggle("activ-burger");
-    mobileModal.classList.toggle("is-open");
+header_close_btn.addEventListener("click",openModalByBurger);
 
-    // Додаємо відслідковувач події прокрутки після кліку на header_close_btn
-    window.addEventListener("scroll", scrollHandler);
-});
+function openModalByBurger(){
+        header_burger_btn.classList.add("activ-burger");
+        mobileModal.classList.toggle("is-open");
+        // Додаємо відслідковувач події прокрутки після кліку на header_close_btn
+        window.addEventListener("scroll", scrollHandler);
+    }
+
 
 function scrollHandler() {
     // Перевіряємо, чи прокручено сторінку вниз
     if (window.scrollY > 5) {
         // Викликаємо функцію clickModalX() для закриття модального вікна
         clickModalX();
-
         // Видаляємо відслідковувач події прокрутки після виклику clickModalX()
         window.removeEventListener("scroll", scrollHandler);
     }
@@ -130,11 +131,9 @@ header_close_btn_modal.addEventListener("click", clickModalX);
 header_close_btn_modal.addEventListener('scroll', notScroll);
 
 function clickModalX() {
-    
-    header_burger_btn_modal.classList.toggle("activ-burger");
+    header_burger_btn_modal.classList.remove("activ-burger");
     header_burger_btn.classList.remove("activ-burger");
     mobileModal.classList.remove("is-open");
-    const links=document.querySelectorAll('.list-open-item');
 }
 
 function notScroll() {
@@ -149,10 +148,8 @@ function notScroll() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const menuItems = document.querySelectorAll(".list-open-item a");
-    clickModalX();
     menuItems.forEach(function(item) {
       item.addEventListener("click", function(event) {
-        
         event.preventDefault();
         const targetId = this.getAttribute("href").substring(1);
         const targetElement = document.getElementById(targetId);
