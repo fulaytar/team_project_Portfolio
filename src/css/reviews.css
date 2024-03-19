@@ -1,37 +1,5 @@
-/* Стилі шрифтів та кольори
-
-=========Дефолтні===========
-font-family: var(--font-cap-regular)
-===========================
-
-========Приклад як прописувати=====
-font-family: var(--font-cap-extrabold);
-==========================
-
--------Список жирності----
-100   var(--font-cap-thin)
-200   var(--font-cap-extralight)
-300   var(--font-cap-light)
-400   var(--font-cap-regular)
-500   var(--font-cap-medium)
-600   var(--font-cap-semibold)
-700   var(--font-cap-bold) 
-800   var(--font-cap-extrabold)
-900   var(--font-cap-black)
--------Список жирності ----
-
-=======Кольори======
---main-black-color: #1C1D20;
---secondary-color: #242527;
---dark-grey-color: #3B3B3B;
---accent-color: #ED3B44;
---accent-white-color: #FAFAFA;
-=======Кольори======
-*/
-
 .reviews-section {
   background-color: var(--main-black-color);
-  padding-top: 64px;
 }
 
 .reviews-header {
@@ -41,15 +9,16 @@ font-family: var(--font-cap-extrabold);
   text-transform: uppercase;
   line-height: 1.5;
   letter-spacing: -0.32px;
+  align-self: start;
 }
 
 .reviews-container {
   display: flex;
   flex-direction: column;
   gap: 32px;  
-  padding: 0px;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .review-image {
   border-radius: 10px;
@@ -62,6 +31,7 @@ font-family: var(--font-cap-extrabold);
   flex-direction: column;
   gap: 8px;
 }
+
 .review-author {
   color: #ffffff;
   font-family: var(--font-cap-semibold);
@@ -84,20 +54,19 @@ font-family: var(--font-cap-extrabold);
   -ms-overflow-style: none;
   }
     
-   .review-text::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
-
+.review-text::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 
 div.swiper6 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  width: 359px;
-  height: 386px;
+  width: 320px;
   margin: 0;
+  overflow: hidden;
 }
 
 .reviews {
@@ -122,8 +91,8 @@ li.review-item {
   gap: 12px;
 }
 
- div.swiper-button-prev,
- div.swiper-button-next {
+.swiper-button-prev.swiper-btn-prev-review,
+.swiper-button-next.swiper-btn-next-review {
   position: static;
   margin-top: 0;
   display: inline-flex;
@@ -179,19 +148,24 @@ li.not-found-item {
 @media screen and (min-width: 768px) {
 
   div.swiper6, li.not-found-item {
-  width: 704px;
+    width: 704px;
   }
-  .reviews-section {
-    padding-top: 96px;
+  .swiper-button-prev.swiper-btn-prev-review,
+  .swiper-button-next.swiper-btn-next-review {
+    width: 68px;
+    height: 68px;
+    cursor: pointer;
+  }
+  .swiper-button-prev .swiper-arrow-prev,
+  .swiper-button-next .swiper-arrow-next {
+    width: 32px;
+    height: 32px
   }
 }
 
 @media screen and (min-width: 1440px) {
   div.swiper6, li.not-found-item {
+    width: 1376px;
+  }
 
-  width: 1376px;
-  }
-  .reviews-section {
-    padding-top: 164px;
-  }
 }
