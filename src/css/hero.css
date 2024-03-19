@@ -93,7 +93,7 @@ color: var(--main-black-color);
   background-color: transparent;
   padding: 10px 12px;
   border-radius: 60px;
-  border: 1px solid var(--dark-grey-color);
+  border: 1px solid #fafafa33;
   color: var(--accent-white-color);
   font-family: var(--font-cap-medium);
   font-size: 14px;
@@ -176,12 +176,32 @@ color: var(--main-black-color);
     font-size: 16px;
     cursor: pointer;
     letter-spacing: -0.32px;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mail-btn:hover {
+    border: 1px solid var(--accent-white-color);
   }
 
   .item {
     padding: 18px 16px;
     font-size: 16px;
     cursor: pointer;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .item:hover {
+    border: 1px solid var(--accent-white-color);
+    animation: rotateOnce 1s;
+  }
+
+  @keyframes rotateOnce {
+    0% {
+      transform: rotate(0deg); /* Начальное положение */
+    }
+    100% {
+      transform: rotate(360deg); /* Положение после 360 градусов поворота */
+    }
   }
   .item-1 {
     padding: 18px 20px;
@@ -213,31 +233,10 @@ color: var(--main-black-color);
     height: 280px;
   }
 
-  .mail-btn {
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .mail-btn:hover {
-    border: 1px solid var(--accent-white-color);
-  }
-
   .item {
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .item:hover {
-    border: 1px solid var(--accent-white-color);
-    animation: rotateOnce 1s;
-  }
-
-  @keyframes rotateOnce {
-    0% {
-      transform: rotate(0deg); /* Начальное положение */
-    }
-    100% {
-      transform: rotate(360deg); /* Положение после 360 градусов поворота */
-    }
-  }
   @media screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx),
     screen and (min-device-pixel-ratio: 2) {

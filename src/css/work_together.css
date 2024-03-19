@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--main-black-color);
+  background-color:  var(--main-black-color);
   padding: 32px 0;
   color: #fff;
 }
@@ -7,23 +7,27 @@
   color: #fff;
   font-family: var(--font-cap-medium);
 }
-.work-together__title picture {
-  display: inline-block;
+
+.work-together picture {
   max-width: 44px;
+  float: left;
+  margin-right: 25px;
 }
-.work-together__title .work-together__title__text h3 {
+.work-together h2 {
   font-size: 40px;
   line-height: 1;
   font-family: var(--font-cap-medium);
   letter-spacing: 3px;
   text-transform: uppercase;
 }
-.work-together__title .work-together__title__text_mark {
+.work-together .work-together__title__text_mark {
   color: #ED3B44;
 }
-.work-together__title .work-together__title__text p {
+.work-together .work-together__title__sub {
+  display: block;
   padding-top: 10px;
 }
+
 
 .work-together__form {
   padding: 64px 0 78px 0;
@@ -103,14 +107,16 @@
 }
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
-  transition: background-color 0s 600000s, color 0s 600000s !important;
+  transition: background-color 0s 600000s, color 0s 600000s;
 }
 
+.work-together__link {
+}
 .work-together__link a {
   display: inline-grid;
   justify-content: center;
   align-items: center;
-  width: 169px;
+  /*width: 169px;*/
   height: 40px;
   padding: 10px 20px;
   box-sizing: border-box;
@@ -139,12 +145,14 @@ input:-webkit-autofill:focus {
   background: rgb(28, 29, 32);
   text-align: center;
 }
-.modal h2 {
+.modal .content h2 {
   color: #fff;
   font-size: 20px;
   padding-bottom: 25px;
   line-height: 24px;
   font-family: var(--font-cap-semibold);
+  text-transform: none;
+  letter-spacing: 0;
 }
 .modal p {
   color: rgba(250, 250, 250, 0.6);
@@ -183,11 +191,6 @@ input:-webkit-autofill:focus {
   pointer-events: all;
 }
 
-@media  screen and (max-width:374px) {
-  .work-together__link a:first-child{
-    margin-bottom:12px;
-  }
-}
 
 @media screen and (min-width: 375px) {
   .container {
@@ -203,7 +206,6 @@ input:-webkit-autofill:focus {
     padding-left: 32px;
     padding-right: 32px;
   }
-
   .footer {
     padding-bottom: 169px;
   }
@@ -212,10 +214,10 @@ input:-webkit-autofill:focus {
     padding: 88px 0 168px 0;
   }
 
-  .work-together__title picture {
+  .work-together picture {
     max-width: 70px;
   }
-  .work-together__title .work-together__title__text h3 {
+  .work-together h2 {
     font-size: 64px;
   }
 
@@ -234,7 +236,7 @@ input:-webkit-autofill:focus {
   }
 
   .work-together__link a {
-    width: 255px;
+    /*width: 255px;*/
     height: 56px;
     padding: 18px 32px 18px 32px;
   }

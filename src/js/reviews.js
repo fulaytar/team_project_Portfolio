@@ -5,7 +5,6 @@ import axios from 'axios';
 import Swiper from 'swiper';
 
 import { Navigation, Keyboard, Mousewheel } from 'swiper/modules';
-import 'swiper/css/bundle';
 
 
 const reviewsList = document.querySelector('.reviews');
@@ -17,6 +16,9 @@ function createReviewsMarkup(reviews) {
         class="review-image"
         src="${avatar_url}"
         alt="${author}"
+        loading="lazy"
+        height="48"
+        width="48"
       />
       <div class="review-textbox">
         <h3 class="review-author">${author}</h3>
@@ -27,6 +29,7 @@ function createReviewsMarkup(reviews) {
   reviewsList.insertAdjacentHTML("beforeend", markup);
 
   const swiper_reviews = new Swiper('.swiper6', {
+
     modules: [Navigation, Keyboard, Mousewheel],
     slidesPerView: 1,
     spaceBetween: 16,
@@ -41,8 +44,8 @@ function createReviewsMarkup(reviews) {
       }
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-btn-next-review',
+      prevEl: '.swiper-btn-prev-review',
     },
     keyboard: {
       enabled: true,

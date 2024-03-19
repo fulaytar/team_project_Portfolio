@@ -1,6 +1,7 @@
 'use strict';
 import Swiper from 'swiper';
 import 'swiper/css';
+import { Navigation } from 'swiper/modules';
 import Accordion from 'accordion-js';
 // import 'accordion-js/dist/accordion.min.css';
 
@@ -10,9 +11,10 @@ const container = document.querySelector('.accordion-wrapper');
 const aboutMeAccordion = new Accordion(container, {
   showMultiple: true,
 });
+aboutMeAccordion.open(0);
 
 container.addEventListener('click', event => {
-  var button = event.target.closest('button');
+  const button = event.target.closest('button');
   if (button && button.tagName === 'BUTTON') {
     if (button.id === 'ac-trigger-0') {
       arrow[0].classList.toggle('rotate');
@@ -26,21 +28,23 @@ container.addEventListener('click', event => {
 
 const nextArrow = document.querySelector('.arrow-next');
 
-
 const AboutMeSwiper = new Swiper('.swiper2', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
-});
-nextArrow.addEventListener('click', () => {
-  AboutMeSwiper.slideNext();
+  modules: [Navigation],
+
+  navigation: {
+    nextEl: '.sbn',
+  },
+
+  breakpoints: {
+    767: {
+      slidesPerView: 3,
+    },
+    1440: {
+      slidesPerView: 6,
+    },
+  },
 });
 
-if (window.innerWidth > 767 && window.innerWidth < 1440) {
-  AboutMeSwiper.params.slidesPerView = 3;
-  AboutMeSwiper.update();
-}
-if (window.innerWidth >= 1440) {
-  AboutMeSwiper.params.slidesPerView = 6;
-  AboutMeSwiper.update();
-}
