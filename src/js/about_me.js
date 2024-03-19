@@ -6,7 +6,7 @@ import Accordion from 'accordion-js';
 // import 'accordion-js/dist/accordion.min.css';
 
 const arrow = document.querySelectorAll('.arrow');
-const container = document.querySelector('.accordion-menu');
+const container = document.querySelector('.accordion-wrapper');
 
 const aboutMeAccordion = new Accordion(container, {
   showMultiple: true,
@@ -14,7 +14,6 @@ const aboutMeAccordion = new Accordion(container, {
 aboutMeAccordion.open(0);
 
 container.addEventListener('click', event => {
-
   const button = event.target.closest('button');
   if (button && button.tagName === 'BUTTON') {
     if (button.id === 'ac-trigger-0') {
