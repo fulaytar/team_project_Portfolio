@@ -106,8 +106,8 @@
     gap: 12px;
 }
 
-div .swiper-btn-prev,
-div .swiper-btn-next {
+.wrapper-btn-arrows .swiper-btn-prev,
+.wrapper-btn-arrows .swiper-btn-next {
     position: static;
     margin-top: 0;
     display: inline-flex;
@@ -177,10 +177,11 @@ div .swiper-button-next.swiper-button-disabled {
     .wrapper-btn-arrows {
         gap: 20px;
     }
-    div .swiper-btn-prev,
-    div .swiper-btn-next {
+    .wrapper-btn-arrows .swiper-btn-prev,
+    .wrapper-btn-arrows .swiper-btn-next {
         width: 68px;
         height: 68px;
+        cursor: pointer;
     }
     .swiper-btn-prev .btn-arrow-prev,
     .swiper-btn-next .btn-arrow-next {
