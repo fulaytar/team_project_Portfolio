@@ -72,8 +72,8 @@ function menuHandler(event) {
          closeMenu();
         return;
     } 
-    openMenu();
     window.addEventListener('scroll', checkScroll);
+    openMenu();
 }
 
 function closeMenu() {
@@ -131,14 +131,14 @@ header_close_btn_modal.addEventListener("click", clickModalX);
 header_close_btn_modal.addEventListener('scroll', notScroll);
 
 function clickModalX() {
-    header_burger_btn_modal.classList.remove("activ-burger");
-    header_burger_btn.classList.remove("activ-burger");
-    mobileModal.classList.remove("is-open");
+    header_burger_btn_modal.classList.toggle("activ-burger");
+    header_burger_btn.classList.toggle("activ-burger");
+    mobileModal.classList.toggle("is-open");
 }
 
 function notScroll() {
     let scrolledPixels = window.scrollY;
-    if (scrolledPixels > 1) {
+    if (scrolledPixels > 10) {
         header_burger_btn.classList.remove("activ-burger");
         clickModalX();
         window.removeEventListener("scroll", notScroll);
@@ -146,19 +146,3 @@ function notScroll() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const menuItems = document.querySelectorAll(".list-open-item a");
-    menuItems.forEach(function(item) {
-      item.addEventListener("click", function(event) {
-        event.preventDefault();
-        const targetId = this.getAttribute("href").substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        // Додаємо або видаляємо клас "is-open" відповідно до потреби
-        document.querySelector(".mob-menu").classList.remove("is-open");
-  
-        // Прокручуємо до цільового елемента
-        targetElement.scrollIntoView({ behavior: "smooth" });
-      });
-    });
-  });
