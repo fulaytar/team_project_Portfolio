@@ -6,7 +6,7 @@ import Accordion from 'accordion-js';
 // import 'accordion-js/dist/accordion.min.css';
 
 const arrow = document.querySelectorAll('.arrow');
-const container = document.querySelector('.accordion-wrapper');
+const container = document.querySelector('.accordion-menu');
 
 const aboutMeAccordion = new Accordion(container, {
   showMultiple: true,
