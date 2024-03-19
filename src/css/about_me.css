@@ -263,10 +263,6 @@ font-family: var(--font-cap-extrabold);
 }
 
 @media screen and (min-width: 768px) {
-  .flex {
-    gap: 64px;
-  }
-
   .about-me-menu {
     margin-bottom: 32px;
   }
