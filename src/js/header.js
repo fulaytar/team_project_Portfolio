@@ -131,7 +131,7 @@ header_close_btn_modal.addEventListener('scroll', notScroll);
 
 function clickModalX() {
     
-    header_burger_btn_modal.classList.remove("activ-burger");
+    header_burger_btn_modal.classList.toggle("activ-burger");
     header_burger_btn.classList.remove("activ-burger");
     mobileModal.classList.remove("is-open");
     const links=document.querySelectorAll('.list-open-item');
