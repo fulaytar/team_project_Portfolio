@@ -43,7 +43,6 @@ font-family: var(--font-cap-extrabold);
 }
 
 .about-me-section {
-  padding-bottom: 64px;
   background-color: var(--main-black-color);
 }
 .about-me-box {
