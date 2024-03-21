@@ -1,20 +1,38 @@
-import Accordion from 'accordion-js';
+'use strict';
 import Swiper from 'swiper';
-import { Navigation, Keyboard, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
+import { Navigation } from 'swiper/modules';
+import Accordion from 'accordion-js';
+// import 'accordion-js/dist/accordion.min.css';
 
-const container = document.querySelector('.accordion-container-about');
-const accordion = new Accordion(container, {
+const arrow = document.querySelectorAll('.arrow');
+const container = document.querySelector('.accordion-wrapper');
+
+const aboutMeAccordion = new Accordion(container, {
   showMultiple: true,
-  openOnInit: [0],
+});
+aboutMeAccordion.open(0);
+
+container.addEventListener('click', event => {
+  const button = event.target.closest('button');
+  if (button && button.tagName === 'BUTTON') {
+    if (button.id === 'ac-trigger-0') {
+      arrow[0].classList.toggle('rotate');
+    } else if (button.id === 'ac-trigger-1') {
+      arrow[1].classList.toggle('rotate');
+    } else if (button.id === 'ac-trigger-2') {
+      arrow[2].classList.toggle('rotate');
+    }
+  }
 });
 
+const nextArrow = document.querySelector('.arrow-next');
 
 const AboutMeSwiper = new Swiper('.swiper2', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
-  modules: [Navigation, Keyboard, Mousewheel],
+  modules: [Navigation],
 
   navigation: {
     nextEl: '.sbn',
@@ -28,12 +46,5 @@ const AboutMeSwiper = new Swiper('.swiper2', {
       slidesPerView: 6,
     },
   },
-
-  keyboard: {
-    enabled: true,
-  },
-  mousewheel: {
-    enabled: true,
-    forceToAxis: true,
-  },
 });
+
