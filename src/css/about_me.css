@@ -153,11 +153,16 @@ font-family: var(--font-cap-extrabold);
   transition: transform 0.4s ease-out;
   fill: var(--accent-white-color);
 }
-
 .rotate {
   transform: rotate(180deg);
 }
+#ac-trigger-0 .arrow {
+  transform: rotate(180deg);
+}
 
+#ac-trigger-0 .arrow.rotate{
+  transform: rotate(0deg);
+}
 .about-me-description {
   font-family: var(--font-cap-medium);
   font-size: 16px;
