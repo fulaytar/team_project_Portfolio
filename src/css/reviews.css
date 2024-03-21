@@ -1,5 +1,6 @@
 .reviews-section {
   background-color: var(--main-black-color);
+  padding-top: 64px;
 }
 
 .reviews-header {
@@ -161,11 +162,19 @@ li.not-found-item {
     width: 32px;
     height: 32px
   }
+  .reviews-section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   div.swiper6, li.not-found-item {
     width: 1376px;
+  }
+  .reviews-section {
+    padding-top: 164px;
+    padding-bottom: 164px;
   }
 
 }

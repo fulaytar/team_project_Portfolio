@@ -44,6 +44,7 @@ font-family: var(--font-cap-extrabold);
 
 .about-me-section {
   background-color: var(--main-black-color);
+  padding-top: 64px;
 }
 .about-me-box {
   max-width: 343px;
@@ -320,6 +321,9 @@ font-family: var(--font-cap-extrabold);
     .about-me-menu {
       display: flex;
       gap: 16px;
+    }
+    .about-me-section {
+      padding-top: 96px;
     }
 
     .about-me-box {

@@ -1,6 +1,7 @@
 .faq-section {
     background-color: var(--main-black-color);
     color: var(--accent-white-color);
+    padding-bottom: 64px;
     overflow: hidden;
 }
 .faq-header {
@@ -136,6 +137,9 @@
     .faq-item-btn {
         padding: 32px 0;
     }
+    .faq-section {
+        padding-bottom: 96px;
+    }
 }
 
 @media screen and (min-width: 1440px) {
@@ -169,5 +173,8 @@
 
     .faq-item-btn {
         padding-right: 50px;
+    }
+    .faq-section {
+        padding-bottom: 164px;
     }
 }
