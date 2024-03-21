@@ -1,4 +1,4 @@
-let x1=0, y1=0;
+/* let x1=0, y1=0;
 window.client
 const 
   vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0),
@@ -57,4 +57,4 @@ addEventListener("mousemove", (e) => {
     x1 = clientX;
     y1 = clientY;
   }
-},{passive: true});
+},{passive: true}); */
