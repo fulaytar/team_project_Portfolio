@@ -28,7 +28,8 @@ header_close_btn.addEventListener("click",openModalByBurger);
 
 function openModalByBurger(){
         header_burger_btn.classList.add("activ-burger");
-        mobileModal.classList.toggle("is-open");
+        mobileModal.classList.add("is-open");
+        header_close_btn_modal.addEventListener("click", clickModalX);
         // Додаємо відслідковувач події прокрутки після кліку на header_close_btn
         window.addEventListener("scroll", scrollHandler);
     }
@@ -36,7 +37,7 @@ function openModalByBurger(){
 
 function scrollHandler() {
     // Перевіряємо, чи прокручено сторінку вниз
-    if (window.scrollY > 5) {
+    if (window.scrollY > 10) {
         // Викликаємо функцію clickModalX() для закриття модального вікна
         clickModalX();
         // Видаляємо відслідковувач події прокрутки після виклику clickModalX()
@@ -44,7 +45,7 @@ function scrollHandler() {
     }
 }
 
-header_burger_btn.addEventListener("scroll", notScroll);
+
 
 // Обробка меню 
 const header_list = document.querySelector('.list-menu-header');
@@ -127,22 +128,47 @@ function checkScroll() {
 const header_close_btn_modal = document.querySelector(".close-modal");
 const header_burger_btn_modal = document.querySelector(".burger-modal");
 
-header_close_btn_modal.addEventListener("click", clickModalX);
-header_close_btn_modal.addEventListener('scroll', notScroll);
+
+
 
 function clickModalX() {
-    header_burger_btn_modal.classList.toggle("activ-burger");
-    header_burger_btn.classList.toggle("activ-burger");
-    mobileModal.classList.toggle("is-open");
+    header_burger_btn_modal.classList.remove("activ-burger");
+    header_burger_btn.classList.remove("activ-burger");
+    mobileModal.classList.remove("is-open");
 }
 
-function notScroll() {
-    let scrolledPixels = window.scrollY;
-    if (scrolledPixels > 10) {
-        header_burger_btn.classList.remove("activ-burger");
-        clickModalX();
-        window.removeEventListener("scroll", notScroll);
 
+/* ======Кнопка при скролі вниз====== */
+const btnUp = {
+    el: document.querySelector('.btn-up'),
+    show() {
+      // удалим у кнопки класс btn-up_hide
+      this.el.classList.remove('btn-up_hide');
+    },
+    hide() {
+      // добавим к кнопке класс btn-up_hide
+      this.el.classList.add('btn-up_hide');
+    },
+    addEventListener() {
+      // при прокрутке содержимого страницы
+      window.addEventListener('scroll', () => {
+        // определяем величину прокрутки
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+        // если страница прокручена больше чем на 500px, то делаем кнопку видимой, иначе скрываем
+        scrollY > 600 ? this.show() : this.hide();
+      });
+      // при нажатии на кнопку .btn-up
+      document.querySelector('.btn-up').onclick = () => {
+        // переместим в начало страницы
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+      }
     }
-}
+  }
+  
+  btnUp.addEventListener();
+
 

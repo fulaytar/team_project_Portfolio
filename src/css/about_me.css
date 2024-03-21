@@ -179,14 +179,20 @@
   left: 8px;
 }
 
+
 .about-item-content {
   overflow: hidden;
   transition-property: height, visibility;
   transition-timing-function: ease;
 }
+#ac-trigger-0 .arrow {
+  transform: rotate(180deg);
+}
+
 
 .about-item-text {
   margin: 0;
+
   font-family: var(--font-cap-medium);
   font-size: 16px;
   line-height: 150%;
@@ -197,6 +203,7 @@
   gap: 10px;
   flex-direction: column;
 }
+
 
 .about-item.js-enabled .about-item-content {
   visibility: hidden;

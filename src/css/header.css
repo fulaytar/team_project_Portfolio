@@ -162,6 +162,48 @@ color: var(--main-black-color);
     pointer-events: none;
     transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1), visibility 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.btn-up {
+    /* фиксированное позиционирование */
+    position: fixed;
+    /* цвет фона */
+    background-color: #FAFAFA;
+    /* расстояние от правого края окна браузера */
+    right: 20px;
+    /* расстояние от нижнего края окна браузера */
+    bottom: 20px;
+    /* скругление верхнего левого угла */
+border-radius: 50%;
+    /* вид курсора */
+    cursor: pointer;
+    /* отображение элемента как flex */
+    display: flex;
+    /* выравниваем элементы внутри элемента по центру вдоль поперечной оси */
+    align-items: center;
+    /* выравниваем элементы внутри элемента по центру вдоль главной оси */
+    justify-content: center;
+    width: 57px;
+    height: 57px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+    z-index: 9999;
+  }
+  .btn-up:hover{
+    
+box-shadow: 1px 1px 5px 0px rgba(237, 59, 68, 0.80), -1px -1px 5px 0px rgba(237, 59, 68, 0.80);
+  }
+  .btn-up-circle{
+width: 33px;
+height: 33px;
+flex-shrink: 0;
+border-radius: 50%;
+box-shadow: 5px 5px 12px #C9D9E8, -5px -5px 10px #FAFAFA;
+background:  no-repeat center center;
+
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Cpath d='M10.8359 17.7637L10.8861 3.95985' stroke='%23ED3B44' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5.69092 9.11719L10.8862 3.95955L16.0438 9.1548' stroke='%23ED3B44' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+  
+  .btn-up_hide {
+    display: none;
+  }
 
 @media screen and (min-resolution: 192dpi),
 screen and (min-resolution: 2dppx),
