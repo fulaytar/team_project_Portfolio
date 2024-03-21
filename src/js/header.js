@@ -28,7 +28,8 @@ header_close_btn.addEventListener("click",openModalByBurger);
 
 function openModalByBurger(){
         header_burger_btn.classList.add("activ-burger");
-        mobileModal.classList.toggle("is-open");
+        mobileModal.classList.add("is-open");
+        header_close_btn_modal.addEventListener("click", clickModalX);
         // Додаємо відслідковувач події прокрутки після кліку на header_close_btn
         window.addEventListener("scroll", scrollHandler);
     }
@@ -36,7 +37,7 @@ function openModalByBurger(){
 
 function scrollHandler() {
     // Перевіряємо, чи прокручено сторінку вниз
-    if (window.scrollY > 5) {
+    if (window.scrollY > 10) {
         // Викликаємо функцію clickModalX() для закриття модального вікна
         clickModalX();
         // Видаляємо відслідковувач події прокрутки після виклику clickModalX()
@@ -44,7 +45,7 @@ function scrollHandler() {
     }
 }
 
-header_burger_btn.addEventListener("scroll", notScroll);
+
 
 // Обробка меню 
 const header_list = document.querySelector('.list-menu-header');
@@ -127,22 +128,14 @@ function checkScroll() {
 const header_close_btn_modal = document.querySelector(".close-modal");
 const header_burger_btn_modal = document.querySelector(".burger-modal");
 
-header_close_btn_modal.addEventListener("click", clickModalX);
-header_close_btn_modal.addEventListener('scroll', notScroll);
+
+
 
 function clickModalX() {
-    header_burger_btn_modal.classList.toggle("activ-burger");
-    header_burger_btn.classList.toggle("activ-burger");
-    mobileModal.classList.toggle("is-open");
+    header_burger_btn_modal.classList.remove("activ-burger");
+    header_burger_btn.classList.remove("activ-burger");
+    mobileModal.classList.remove("is-open");
 }
 
-function notScroll() {
-    let scrolledPixels = window.scrollY;
-    if (scrolledPixels > 10) {
-        header_burger_btn.classList.remove("activ-burger");
-        clickModalX();
-        window.removeEventListener("scroll", notScroll);
 
-    }
-}
 
