@@ -126,6 +126,10 @@ font-family: var(--font-cap-extrabold);
   position: relative;
 }
 
+.accordion-wrapper:first-child .accordion-header {
+  padding-top: 0;
+}
+
 .accordion-button {
   display: flex;
   justify-content: center;
@@ -154,21 +158,21 @@ font-family: var(--font-cap-extrabold);
   transform: rotate(180deg);
 }
 
-.about-me-menu-text-list p {
+.about-me-description {
   font-family: var(--font-cap-medium);
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -0.02em;
   color: var(--accent-white-color);
 }
-.about-me-menu-text-list:first-child {
+.about-me-description:first-child {
   margin-bottom: 32px;
 }
-.about-me-menu-text {
+.about-me-description:last-child {
   margin-bottom: 20px;
 }
 
-.about-me-menu-role-list p {
+.about-me-role {
   font-family: var(--font-cap-medium);
   font-size: 16px;
   line-height: 150%;
@@ -176,11 +180,11 @@ font-family: var(--font-cap-extrabold);
   color: var(--accent-white-color);
 }
 
-.about-me-menu-role {
+.about-me-role:last-child {
   margin-bottom: 20px;
 }
 
-.about-me-menu-education-list {
+.about-me-education {
   font-family: var(--font-cap-medium);
   font-size: 16px;
   line-height: 150%;
@@ -188,7 +192,7 @@ font-family: var(--font-cap-extrabold);
   color: var(--accent-white-color);
 }
 
-.about-me-menu-education {
+.about-me-education:last-child {
   margin-bottom: 20px;
 }
 
@@ -232,7 +236,7 @@ font-family: var(--font-cap-extrabold);
   stroke: var(--dark-grey-color);
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.third .sbn .arrow-next .arrow-next-svg:hover{
+.third .sbn .arrow-next .arrow-next-svg:hover {
   stroke: var(--accent-white-color);
 }
 .third .sbn {
@@ -264,7 +268,7 @@ font-family: var(--font-cap-extrabold);
     line-height: 105%;
   }
 
-  .about-me-menu-text {
+  .about-me-description:last-child {
     margin-bottom: 32px;
   }
 
@@ -273,11 +277,11 @@ font-family: var(--font-cap-extrabold);
     padding-bottom: 46px;
   }
 
-  .about-me-menu-role {
+  .about-me-role:last-child {
     margin-bottom: 32px;
   }
 
-  .about-me-menu-education {
+  .about-me-education:last-child {
     margin-bottom: 32px;
   }
 
@@ -305,6 +309,9 @@ font-family: var(--font-cap-extrabold);
   }
 
   @media screen and (min-width: 1440px) {
+    .flex {
+      gap: 96px;
+    }
     .about-me-menu {
       display: flex;
       gap: 16px;
@@ -312,25 +319,16 @@ font-family: var(--font-cap-extrabold);
 
     .about-me-box {
       width: 680px;
+      margin-bottom: 0;
     }
     .about-me-img {
       width: 680px;
       height: 700px;
     }
 
-    .about-me-menu-text {
+    .accordion-wrapper:first-child .accordion-panel {
       width: 612px;
       height: 320px;
-      margin-left: 696px;
-    }
-    .about-me-menu-role {
-      width: 284px;
-      height: 92px;
-      margin-left: 696px;
-    }
-    .about-me-menu-education {
-      width: 465px;
-      height: 140px;
       margin-left: 696px;
     }
 
