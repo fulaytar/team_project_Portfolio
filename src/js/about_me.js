@@ -1,7 +1,6 @@
-'use strict';
 import Swiper from 'swiper';
 import 'swiper/css';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Keyboard, Mousewheel } from 'swiper/modules';
 import Accordion from 'accordion-js';
 // import 'accordion-js/dist/accordion.min.css';
 
@@ -28,14 +27,22 @@ container.addEventListener('click', event => {
 
 const nextArrow = document.querySelector('.arrow-next');
 
-const AboutMeSwiper = new Swiper('.swiper2', {
+const aboutMeSwiper = new Swiper('.swiper2', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 0,
-  modules: [Navigation],
+  modules: [Navigation, Keyboard, Mousewheel],
 
   navigation: {
     nextEl: '.sbn',
+  },
+
+  keyboard: {
+    enabled: true,
+  },
+  mousewheel: {
+    enabled: true,
+    forceToAxis: true,
   },
 
   breakpoints: {
@@ -47,4 +54,3 @@ const AboutMeSwiper = new Swiper('.swiper2', {
     },
   },
 });
-
