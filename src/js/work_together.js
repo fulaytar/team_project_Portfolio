@@ -7,7 +7,7 @@ const closeModalButton = document.querySelector('[data-close-button]');
 const overlay = document.getElementById('overlay');
 const modal = document.getElementById('modal');
 
-const INSTANCE =  axios.create({
+const INSTANCE = axios.create({
   baseURL: `https://portfolio-js.b.goit.study/api`,
   headers: {
     'Accept': 'application/json'
@@ -33,6 +33,7 @@ const openModal = () => {
 
 const closeModal = () => {
   toggleModal('close');
+  removeValidationHandlers();
   removeEscapeKeyListener();
 };
 
@@ -53,7 +54,7 @@ const handleSuccess = (responseData) => {
 const handleError = (errorMessage) => {
   iziToast.error({
     title: 'Error',
-    message: errorMessage,
+    message: "Please check the information you entered and try again",
     position: 'topRight'
   });
 };
@@ -103,57 +104,100 @@ const createHTML = (data) => {
   addEscapeKeyListener();
 };
 
-const validateInputs = () => {
+const validateInput = (input) => {
+  const parent = input.parentNode;
+  const checkAttr = input.getAttribute('type') || input.tagName.toLowerCase();
+  removeError(input);
+
+  switch (checkAttr) {
+    case 'text':
+      const inputValue = input.value.trim();
+      const minLength = parseInt(input.getAttribute('minlength'));
+
+      if (inputValue === '') {
+        parent.classList.add("error");
+        notification(input, "The field is required.", "error");
+        return input.getAttribute('name');
+      } else if (minLength && inputValue.length < minLength) {
+        parent.classList.add("error");
+        notification(input, `Minimum length is ${minLength} characters.`, "error");
+        return input.getAttribute('name');
+      } else {
+        parent.classList.remove("error");
+        notification(input, "Success!", "success");
+        return null;
+      }
+    case 'email':
+      const regEmail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if (input.value.trim() === '' || !regEmail.test(input.value)) {
+        parent.classList.add("error");
+        notification(input, "Invalid email, please try again", "error");
+        return input.getAttribute('name');
+      } else {
+        parent.classList.remove("error");
+        notification(input, "Success!", "success");
+        return null;
+      }
+    default:
+      if (input.value.trim() === '') {
+        parent.classList.add("error");
+        notification(input, "The field is required.", "error");
+        return input.getAttribute('name');
+      } else {
+        parent.classList.remove("error");
+        notification(input, "Success!", "success");
+        return null;
+      }
+  }
+};
+
+const handleFocus = (e) => {
+  const input = e.target;
+  input.addEventListener('input', validateOnInput);
+};
+
+const handleBlur = (e) => {
+  const input = e.target;
+  input.removeEventListener('input', validateOnInput);
+  validateInput(input);
+};
+
+const validateOnInput = (e) => {
+  const input = e.target;
+  validateInput(input);
+};
+
+const attachValidationHandlers = () => {
   const inputs = form.querySelectorAll('.form-control');
-  const valid = [];
+  inputs.forEach((input) => {
+    input.addEventListener('focus', handleFocus);
+    input.addEventListener('blur', handleBlur);
+  });
+};
 
-  inputs.forEach((item) => {
-    const parent = item.parentNode;
-    const checkAttr = item.getAttribute('type') || item.tagName.toLowerCase();
-    removeError(item);
+const removeValidationHandlers = () => {
+  const inputs = form.querySelectorAll('.form-control');
+  inputs.forEach((input) => {
+    input.removeEventListener('focus', handleFocus);
+    input.removeEventListener('blur', handleBlur);
+  });
+};
 
-    switch (checkAttr) {
-      case 'text':
-        if (item.value.trim() === '') {
-          parent.classList.add("error");
-          notification(item, "The field is required.", "error");
-          valid.push(item.getAttribute('name'));
-        } else {
-          parent.classList.remove("error");
-          notification(item, "Success!", "success");
-        }
-        break;
-      case 'email':
-        const regEmail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (item.value.trim() === '' || !regEmail.test(item.value)) {
-          parent.classList.add("error");
-          notification(item, "Invalid email, please try again", "error");
-          valid.push(item.getAttribute('name'));
-        } else {
-          parent.classList.remove("error");
-          notification(item, "Success!", "success");
-        }
-        break;
-      default:
-        if (item.value.trim() === '') {
-          parent.classList.add("error");
-          notification(item, "The field is required.", "error");
-          valid.push(item.getAttribute('name'));
-        } else {
-          parent.classList.remove("error");
-          notification(item, "Success!", "success");
-        }
-        break;
+const validateInputs = () => {
+  const invalidInputs = [];
+  const inputs = form.querySelectorAll('.form-control');
+  inputs.forEach((input) => {
+    const result = validateInput(input);
+    if (result) {
+      invalidInputs.push(result);
     }
   });
-
-  return valid.length > 0;
+  return invalidInputs;
 };
 
 const escapeKeyHandler = (e) => {
   if (e.key === "Escape") {
     closeModal();
-    removeEscapeKeyListener();
   }
 }
 
@@ -170,10 +214,8 @@ overlay.addEventListener('click', closeModal);
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-
-  let checkValid = validateInputs();
-
-  if(!checkValid){
+  const invalidInputs = validateInputs();
+  if (invalidInputs.length === 0) {
 
     let formData = Object.fromEntries(new FormData(document.getElementById('form')).entries());
 
@@ -186,9 +228,9 @@ form.addEventListener('submit', (e) => {
     Array.prototype.forEach.call(document.querySelectorAll('.input-holder'), (node) => {
       node.classList.remove('success');
     });
+  } else {
+    //
   }
 });
 
-form.addEventListener('input', (e) => {
-  validateInputs();
-});
+attachValidationHandlers();
